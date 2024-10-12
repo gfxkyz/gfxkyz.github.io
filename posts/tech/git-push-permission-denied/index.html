@@ -12,11 +12,11 @@
 <link rel="canonical" href="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://gfxkyz.github.io/img/Q.gif">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gfxkyz.github.io/img/Q.gif">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gfxkyz.github.io/img/Q.gif">
-<link rel="apple-touch-icon" href="https://gfxkyz.github.io/img/Q.gif">
-<link rel="mask-icon" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="icon" href="https://gfxkyz.github.io/img/logo-light-1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gfxkyz.github.io/img/logo-light-1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gfxkyz.github.io/img/logo-dark-1.png">
+<link rel="apple-touch-icon" href="https://gfxkyz.github.io/img/logo-dark-1.png">
+<link rel="mask-icon" href="https://gfxkyz.github.io/img/logo-dark-1.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" hreflang="en-us" href="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/">
@@ -50,12 +50,12 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="使用git push命令推送文件时报错Permission Denied(publickey)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/" />
-<meta property="og:image" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/cover.png" /><meta property="article:section" content="posts" />
+<meta property="og:image" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/Git-Permission-Denied.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-05-05T00:17:58+08:00" />
 <meta property="article:modified_time" content="2023-05-05T00:17:58+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/cover.png" />
+<meta name="twitter:image" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/Git-Permission-Denied.png" />
 <meta name="twitter:title" content="Git Permission Denied"/>
 <meta name="twitter:description" content="使用git push命令推送文件时报错Permission Denied(publickey)"/>
 
@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
   "articleBody": " Generate ssh key 首先，如果没有ssh key的话在控制台输入ssh-keygen -t rsa -C \"xx@example.com\"并执行。 途中会让输入密码不用管，直接一路回车直至生成你的ssh key。\n注意：如果重新生成将会覆盖之前生成的ssh key\n第二步执行命令ssh -v git@github.com，在最后面两句将出现： 第三步再执行ssh-agent -s会出现如下图所示信息。 接着输入ssh-add ~/.ssh/id_rsa后会提示 如果出现 Could not open a connection to your authentication agent. 的错误，先执行一下 eval `ssh-agent -s`,再继续执行ssh-add ~/.ssh/id_rsa基本上就可以了。\n打开刚刚生成的id_rsa.pub，复制里面的内容，进入github账号的settings页面，在 SSH and GPG Keys 设置中找到 New SSH Key。 Title任意命个名，把刚才复制的内容粘贴进key中，完成后点击Add SSH Key。\n最后使用ssh -T git@github.com验证Key，出现如下信息后就搞定了。 ",
   "wordCount" : "417",
   "inLanguage": "en-us",
-  "image":"https://gfxkyz.github.io/posts/tech/git-push-permission-denied/cover.png","datePublished": "2023-05-05T00:17:58+08:00",
+  "image":"https://gfxkyz.github.io/posts/tech/git-push-permission-denied/Git-Permission-Denied.png","datePublished": "2023-05-05T00:17:58+08:00",
   "dateModified": "2023-05-05T00:17:58+08:00",
   "author":[{
     "@type": "Person",
@@ -116,7 +116,7 @@ var _hmt = _hmt || [];
     "name": "Home",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://gfxkyz.github.io/img/Q.gif"
+      "url": "https://gfxkyz.github.io/img/logo-light-1.png"
     }
   }
 }
@@ -134,9 +134,9 @@ var _hmt = _hmt || [];
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gfxkyz.github.io/" accesskey="h" title="Mile Blog (Alt + H)">
-            <img src="https://gfxkyz.github.io/img/Q.gif" alt="logo" aria-label="logo"
-                 height="35">Mile Blog</a>
+            <a href="https://gfxkyz.github.io/" accesskey="h" title="My Blog (Alt + H)">
+            <img src="https://gfxkyz.github.io/img/xyx-pulse.gif" alt="logo" aria-label="logo"
+                 height="35">My Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -214,9 +214,6 @@ var _hmt = _hmt || [];
                 使用git push命令推送文件时报错Permission Denied(publickey)
             </div>
         </header> 
-<figure class="entry-cover1"><img style="zoom:;" loading="lazy" src="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/cover.png" alt="">
-    
-</figure>
         <div class="post-content"><ol>
 <li>Generate ssh key</li>
 </ol>

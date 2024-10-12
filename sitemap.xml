@@ -3,10 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gfxkyz.github.io/posts/</loc>
-    <lastmod>2024-10-12T02:48:16+08:00</lastmod>
+    <lastmod>2024-10-12T23:28:15+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/</loc>
-    <lastmod>2024-10-12T02:48:16+08:00</lastmod>
+    <lastmod>2024-10-12T23:28:15+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</loc>
+    <lastmod>2024-10-12T23:28:15+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/posts/blog/</loc>
+    <lastmod>2024-10-12T23:28:15+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/tags/hugo/</loc>
     <lastmod>2024-10-12T02:48:16+08:00</lastmod>
@@ -20,11 +26,8 @@
     <loc>https://gfxkyz.github.io/tags/</loc>
     <lastmod>2024-10-12T02:48:16+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/posts/blog/</loc>
-    <lastmod>2024-10-12T02:48:16+08:00</lastmod>
-  </url><url>
     <loc>https://gfxkyz.github.io/posts/tech/</loc>
-    <lastmod>2023-05-05T00:17:58+08:00</lastmod>
+    <lastmod>2024-07-10T02:40:47+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</loc>
     <lastmod>2023-05-05T00:17:58+08:00</lastmod>
@@ -70,6 +73,12 @@
   </url><url>
     <loc>https://gfxkyz.github.io/about/</loc>
     <lastmod>2021-11-06T14:57:28+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/tags/git/</loc>
+    <lastmod>2024-07-10T02:40:47+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/posts/tech/git-simple-guide/</loc>
+    <lastmod>2024-07-10T02:40:47+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/archives/</loc>
   </url><url>

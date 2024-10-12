@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Git 简明指南 | Home</title>
+<meta name="keywords" content="">
+<meta name="description" content="原文地址  https://rogerdudler.github.io/git-guide/index.zh.html
+
+安装
+下载 git OSX 版
+下载 git Windows 版
+下载 git Linux 版
+创建仓库
+创建新文件夹，打开，然后执行
+git init
+以创建新的 git 仓库。
+克隆仓库
+执行如下命令以创建一个本地仓库的克隆版本：
+git clone /path/to/repository
+如果是远端服务器上的仓库，你的命令会是这个样子：
+git clone username@host:/path/to/repository
+工作流
+你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。">
+<meta name="author" content="xYx">
+<link rel="canonical" href="https://gfxkyz.github.io/posts/tech/git-simple-guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://gfxkyz.github.io/img/logo-light-1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gfxkyz.github.io/img/logo-light-1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gfxkyz.github.io/img/logo-dark-1.png">
+<link rel="apple-touch-icon" href="https://gfxkyz.github.io/img/logo-dark-1.png">
+<link rel="mask-icon" href="https://gfxkyz.github.io/img/logo-dark-1.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en-us" href="https://gfxkyz.github.io/posts/tech/git-simple-guide/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="og:title" content="Git 简明指南" />
+<meta property="og:description" content="原文地址  https://rogerdudler.github.io/git-guide/index.zh.html
+
+安装
+下载 git OSX 版
+下载 git Windows 版
+下载 git Linux 版
+创建仓库
+创建新文件夹，打开，然后执行
+git init
+以创建新的 git 仓库。
+克隆仓库
+执行如下命令以创建一个本地仓库的克隆版本：
+git clone /path/to/repository
+如果是远端服务器上的仓库，你的命令会是这个样子：
+git clone username@host:/path/to/repository
+工作流
+你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gfxkyz.github.io/posts/tech/git-simple-guide/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-10T02:40:47+08:00" />
+<meta property="article:modified_time" content="2024-07-10T02:40:47+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git 简明指南"/>
+<meta name="twitter:description" content="原文地址  https://rogerdudler.github.io/git-guide/index.zh.html
+
+安装
+下载 git OSX 版
+下载 git Windows 版
+下载 git Linux 版
+创建仓库
+创建新文件夹，打开，然后执行
+git init
+以创建新的 git 仓库。
+克隆仓库
+执行如下命令以创建一个本地仓库的克隆版本：
+git clone /path/to/repository
+如果是远端服务器上的仓库，你的命令会是这个样子：
+git clone username@host:/path/to/repository
+工作流
+你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "📚Posts",
+          "item": "https://gfxkyz.github.io/posts/"
+        },
+
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "👨🏻‍💻 Technology",
+          "item": "https://gfxkyz.github.io/posts/tech/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Git 简明指南",
+      "item": "https://gfxkyz.github.io/posts/tech/git-simple-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git 简明指南",
+  "name": "Git 简明指南",
+  "description": "原文地址 https://rogerdudler.github.io/git-guide/index.zh.html 安装 下载 git OSX 版\n下载 git Windows 版\n下载 git Linux 版\n创建仓库 创建新文件夹，打开，然后执行 git init 以创建新的 git 仓库。\n克隆仓库 执行如下命令以创建一个本地仓库的克隆版本：\ngit clone /path/to/repository\n如果是远端服务器上的仓库，你的命令会是这个样子：\ngit clone username@host:/path/to/repository\n工作流 你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。\n",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "原文地址 https://rogerdudler.github.io/git-guide/index.zh.html 安装 下载 git OSX 版\n下载 git Windows 版\n下载 git Linux 版\n创建仓库 创建新文件夹，打开，然后执行 git init 以创建新的 git 仓库。\n克隆仓库 执行如下命令以创建一个本地仓库的克隆版本：\ngit clone /path/to/repository\n如果是远端服务器上的仓库，你的命令会是这个样子：\ngit clone username@host:/path/to/repository\n工作流 你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。\n添加和提交 你可以提出更改（把它们添加到暂存区），使用如下命令：\ngit add git add *\n这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：\ngit commit -m \"代码提交信息\"\n现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库\n推送改动 你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：\ngit push origin master\n可以把 master 换成你想要推送的任何分支。\n如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：\ngit remote add origin 如此你就能够将你的改动推送到所添加的服务器上去了。\n分支 分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。\n创建一个叫做“feature_x”的分支，并切换过去：\ngit checkout -b feature_x\n切换回主分支：\ngit checkout master\n再把新建的分支删掉：\ngit branch -d feature_x\n除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：\ngit push origin 更新与合并 要更新你的本地仓库至最新改动，执行：\ngit pull\n以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。 要合并其他分支到你的当前分支（例如 master），执行：\ngit merge 在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现冲突（conflicts）。 这时候就需要你修改这些文件来手动合并这些冲突（conflicts）。改完之后，你需要执行如下命令以将它们标记为合并成功：\ngit add 在合并改动之前，你可以使用如下命令预览差异：\ngit diff 标签 为软件发布创建标签是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 1.0.0 的标签：\ngit tag 1.0.0 1b2e1d63ff\n1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：\ngit log\n你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。\nlog 如果你想了解本地仓库的历史记录，最简单的命令就是使用:\ngit log\n你可以添加一些参数来修改他的输出，从而得到自己想要的结果。 只看某一个人的提交记录:\ngit log --author=bob\n一个压缩后的每一条提交记录只占一行的输出:\ngit log --pretty=oneline\n或者你想通过 ASCII 艺术的树形结构来展示所有的分支, 每个分支都标示了他的名字和标签:\ngit log --graph --oneline --decorate --all\n看看哪些文件改变了:\ngit log --name-status\n这些只是你可以使用的参数中很小的一部分。更多的信息，参考：\ngit log --help\n替换本地改动 假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：\ngit checkout -- 此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。\n假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：\ngit fetch origin\ngit reset --hard origin/master\n实用小贴士 内建的图形化 git：\ngitk\n彩色的 git 输出：\ngit config color.ui true\n显示历史记录时，每个提交的信息只显示一行：\ngit config format.pretty oneline\n交互式添加文件到暂存区：\ngit add -i\n链接与资源 图形化客户端 GitX (L) (OSX, 开源软件) Tower (OSX) Source Tree (OSX, 免费) GitHub for Mac (OSX, 免费) GitBox (OSX, App Store) 指南和手册 Git 社区参考书 专业 Git 像 git 那样思考 GitHub 帮助 图解 Git ",
+  "wordCount" : "1438",
+  "inLanguage": "en-us",
+  "datePublished": "2021-10-10T02:40:47+08:00",
+  "dateModified": "2024-07-10T02:40:47+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "xYx"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gfxkyz.github.io/posts/tech/git-simple-guide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gfxkyz.github.io/img/logo-light-1.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gfxkyz.github.io/" accesskey="h" title="My Blog (Alt + H)">
+            <img src="https://gfxkyz.github.io/img/xyx-pulse.gif" alt="logo" aria-label="logo"
+                 height="35">My Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gfxkyz.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
+                <span>🔍 Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/" title="🏠 Home">
+                <span>🏠 Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/posts" title="📚 Posts">
+                <span>📚 Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/tags" title="🧩 Tags">
+                <span>🧩 Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/archives/" title="⏱️ Archives">
+                <span>⏱️ Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+        <div class="post-password">
+        
+    </div>
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/tech/">👨🏻‍💻 Technology</a></div>
+            <h1 class="post-title">
+                Git 简明指南
+            </h1>
+            <div class="post-meta">
+
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>2021-10-10
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>1438字
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>3分钟
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>xYx
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+                <a href="https://gfxkyz.github.io/tags/git/" style="color: var(--secondary)!important;">Git</a>
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo/1.5.8/twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "https://gfxkyz.github.io/"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
+</div>
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85" aria-label="安装">安装</a></li>
+                <li>
+                    <a href="#%e5%88%9b%e5%bb%ba%e4%bb%93%e5%ba%93" aria-label="创建仓库">创建仓库</a></li>
+                <li>
+                    <a href="#%e5%85%8b%e9%9a%86%e4%bb%93%e5%ba%93" aria-label="克隆仓库">克隆仓库</a></li>
+                <li>
+                    <a href="#%e5%b7%a5%e4%bd%9c%e6%b5%81" aria-label="工作流">工作流</a></li>
+                <li>
+                    <a href="#%e6%b7%bb%e5%8a%a0%e5%92%8c%e6%8f%90%e4%ba%a4" aria-label="添加和提交">添加和提交</a></li>
+                <li>
+                    <a href="#%e6%8e%a8%e9%80%81%e6%94%b9%e5%8a%a8" aria-label="推送改动">推送改动</a></li>
+                <li>
+                    <a href="#%e5%88%86%e6%94%af" aria-label="分支">分支</a></li>
+                <li>
+                    <a href="#%e6%9b%b4%e6%96%b0%e4%b8%8e%e5%90%88%e5%b9%b6" aria-label="更新与合并">更新与合并</a></li>
+                <li>
+                    <a href="#%e6%a0%87%e7%ad%be" aria-label="标签">标签</a></li>
+                <li>
+                    <a href="#log" aria-label="log">log</a></li>
+                <li>
+                    <a href="#%e6%9b%bf%e6%8d%a2%e6%9c%ac%e5%9c%b0%e6%94%b9%e5%8a%a8" aria-label="替换本地改动">替换本地改动</a></li>
+                <li>
+                    <a href="#%e5%ae%9e%e7%94%a8%e5%b0%8f%e8%b4%b4%e5%a3%ab" aria-label="实用小贴士">实用小贴士</a></li>
+                <li>
+                    <a href="#%e9%93%be%e6%8e%a5%e4%b8%8e%e8%b5%84%e6%ba%90" aria-label="链接与资源">链接与资源</a><ul>
+                        
+                <li>
+                    <a href="#%e5%9b%be%e5%bd%a2%e5%8c%96%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="图形化客户端">图形化客户端</a></li>
+                <li>
+                    <a href="#%e6%8c%87%e5%8d%97%e5%92%8c%e6%89%8b%e5%86%8c" aria-label="指南和手册">指南和手册</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><div class="notice notice-note" ><span>原文地址  <a href="https://rogerdudler.github.io/git-guide/index.zh.html">https://rogerdudler.github.io/git-guide/index.zh.html</a></span></div>
+
+<h2 id="安装">安装<a hidden class="anchor" aria-hidden="true" href="#安装">#</a></h2>
+<p><a href="http://git-scm.com/download/mac">下载 git OSX 版</a></p>
+<p><a href="http://git-for-windows.github.io/">下载 git Windows 版</a></p>
+<p><a href="http://book.git-scm.com/2_installing_git.html">下载 git Linux 版</a></p>
+<h2 id="创建仓库">创建仓库<a hidden class="anchor" aria-hidden="true" href="#创建仓库">#</a></h2>
+<p>创建新文件夹，打开，然后执行
+<font color="deeppink"><strong><code>git init</code></strong></font>
+以创建新的 git 仓库。</p>
+<h2 id="克隆仓库">克隆仓库<a hidden class="anchor" aria-hidden="true" href="#克隆仓库">#</a></h2>
+<p>执行如下命令以创建一个本地仓库的克隆版本：</p>
+<p><font color="deeppink"><strong><code>git clone /path/to/repository</code></strong></font></p>
+<p>如果是远端服务器上的仓库，你的命令会是这个样子：</p>
+<p><font color="deeppink"><strong><code>git clone username@host:/path/to/repository</code></strong></font></p>
+<h2 id="工作流">工作流<a hidden class="anchor" aria-hidden="true" href="#工作流">#</a></h2>
+<p>你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。</p>
+<img src="git-trees.png">
+<h2 id="添加和提交">添加和提交<a hidden class="anchor" aria-hidden="true" href="#添加和提交">#</a></h2>
+<p>你可以提出更改（把它们添加到暂存区），使用如下命令：</p>
+<p><font font-size="30px" color="deeppink"><strong><code>git add &lt;filename&gt;</code></strong></font></p>
+<p><font color="deeppink"><strong><code>git add *</code></strong></font></p>
+<p>这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：</p>
+<p><font color="deeppink"><strong><code>git commit -m &quot;代码提交信息&quot;</code></strong></font></p>
+<p>现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库</p>
+<h2 id="推送改动">推送改动<a hidden class="anchor" aria-hidden="true" href="#推送改动">#</a></h2>
+<p>你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：</p>
+<p><font color="deeppink"><strong><code>git push origin master</code></strong></font></p>
+<p>可以把 master 换成你想要推送的任何分支。</p>
+<p>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：</p>
+<p><font color="deeppink"><strong><code>git remote add origin &lt;server&gt;</code></strong></font></p>
+<p>如此你就能够将你的改动推送到所添加的服务器上去了。</p>
+<h2 id="分支">分支<a hidden class="anchor" aria-hidden="true" href="#分支">#</a></h2>
+<p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+<p>创建一个叫做“feature_x”的分支，并切换过去：</p>
+<p><font color="deeppink"><strong><code>git checkout -b feature_x</code></strong></font></p>
+<p>切换回主分支：</p>
+<p><font color="deeppink"><strong><code>git checkout master</code></strong></font></p>
+<p>再把新建的分支删掉：</p>
+<p><font color="deeppink"><strong><code>git branch -d feature_x</code></strong></font></p>
+<p>除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：</p>
+<p><font color="deeppink"><strong><code>git push origin &lt;branch&gt;</code></strong></font></p>
+<h2 id="更新与合并">更新与合并<a hidden class="anchor" aria-hidden="true" href="#更新与合并">#</a></h2>
+<p>要更新你的本地仓库至最新改动，执行：</p>
+<p><font color="deeppink"><strong><code>git pull</code></strong></font></p>
+<p>以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。
+要合并其他分支到你的当前分支（例如 master），执行：</p>
+<p><font color="deeppink"><strong><code>git merge &lt;branch&gt;</code></strong></font></p>
+<p>在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现冲突（conflicts）。 这时候就需要你修改这些文件来手动合并这些冲突（conflicts）。改完之后，你需要执行如下命令以将它们标记为合并成功：</p>
+<p><font color="deeppink"><strong><code>git add &lt;filename&gt;</code></strong></font></p>
+<p>在合并改动之前，你可以使用如下命令预览差异：</p>
+<p><font color="deeppink"><strong><code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code></strong></font></p>
+<h2 id="标签">标签<a hidden class="anchor" aria-hidden="true" href="#标签">#</a></h2>
+<p>为软件发布创建标签是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 1.0.0 的标签：</p>
+<p><font color="deeppink"><strong><code>git tag 1.0.0 1b2e1d63ff</code></strong></font></p>
+<p><strong>1b2e1d63ff</strong> 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：</p>
+<p><font color="deeppink"><strong><code>git log</code></strong></font></p>
+<p>你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。</p>
+<h2 id="log">log<a hidden class="anchor" aria-hidden="true" href="#log">#</a></h2>
+<p>如果你想了解本地仓库的历史记录，最简单的命令就是使用:</p>
+<p><font color="deeppink"><strong><code>git log</code></strong></font></p>
+<p>你可以添加一些参数来修改他的输出，从而得到自己想要的结果。 只看某一个人的提交记录:</p>
+<p><font color="deeppink"><strong><code>git log --author=bob</code></strong></font></p>
+<p>一个压缩后的每一条提交记录只占一行的输出:</p>
+<p><font color="deeppink"><strong><code>git log --pretty=oneline</code></strong></font></p>
+<p>或者你想通过 ASCII 艺术的树形结构来展示所有的分支, 每个分支都标示了他的名字和标签:</p>
+<p><font color="deeppink"><strong><code>git log --graph --oneline --decorate --all</code></strong></font></p>
+<p>看看哪些文件改变了:</p>
+<p><font color="deeppink"><strong><code>git log --name-status</code></strong></font></p>
+<p>这些只是你可以使用的参数中很小的一部分。更多的信息，参考：</p>
+<p><font color="deeppink"><strong><code>git log --help</code></strong></font></p>
+<h2 id="替换本地改动">替换本地改动<a hidden class="anchor" aria-hidden="true" href="#替换本地改动">#</a></h2>
+<p>假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：</p>
+<p><font color="deeppink"><strong><code>git checkout -- &lt;filename&gt;</code></strong></font></p>
+<p>此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。</p>
+<p>假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：</p>
+<p><font color="deeppink"><strong><code>git fetch origin</code></strong></font></p>
+<p><font color="deeppink"><strong><code>git reset --hard origin/master</code></strong></font></p>
+<h2 id="实用小贴士">实用小贴士<a hidden class="anchor" aria-hidden="true" href="#实用小贴士">#</a></h2>
+<p>内建的图形化 git：</p>
+<p><font color="deeppink"><strong><code>gitk</code></strong></font></p>
+<p>彩色的 git 输出：</p>
+<p><font color="deeppink"><strong><code>git config color.ui true</code></strong></font></p>
+<p>显示历史记录时，每个提交的信息只显示一行：</p>
+<p><font color="deeppink"><strong><code>git config format.pretty oneline</code></strong></font></p>
+<p>交互式添加文件到暂存区：</p>
+<p><font color="deeppink"><strong><code>git add -i</code></strong></font></p>
+<h2 id="链接与资源">链接与资源<a hidden class="anchor" aria-hidden="true" href="#链接与资源">#</a></h2>
+<h3 id="图形化客户端">图形化客户端<a hidden class="anchor" aria-hidden="true" href="#图形化客户端">#</a></h3>
+<ul>
+<li><a href="http://gitx.laullon.com/">GitX (L) (OSX, 开源软件)</a></li>
+<li><a href="http://www.git-tower.com/">Tower (OSX)</a></li>
+<li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX, 免费)</a></li>
+<li><a href="http://mac.github.com/">GitHub for Mac (OSX, 免费)</a></li>
+<li><a href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+</ul>
+<h3 id="指南和手册">指南和手册<a hidden class="anchor" aria-hidden="true" href="#指南和手册">#</a></h3>
+<ul>
+<li><a href="http://book.git-scm.com/">Git 社区参考书</a></li>
+<li><a href="http://progit.org/book/">专业 Git</a></li>
+<li><a href="http://think-like-a-git.net/">像 git 那样思考</a></li>
+<li><a href="http://help.github.com/">GitHub 帮助</a></li>
+<li><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解 Git</a></li>
+</ul>
+
+
+        </div>
+
+        <footer class="post-footer">
+            
+        </footer>
+    </div>
+</article>
+</main>
+
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Home"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                let textData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Home"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent +
+                    '\r\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Home"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        macTool.setAttribute('class', 'mac-tool')
+        macTool1.setAttribute('class', 'mac bb1')
+        macTool2.setAttribute('class', 'mac bb2')
+        macTool3.setAttribute('class', 'mac bb3')
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+</body>
+
+</html>
