@@ -40,23 +40,7 @@
       <pubDate>Sun, 10 Oct 2021 02:40:47 +0800</pubDate>
       
       <guid>https://gfxkyz.github.io/posts/tech/git-simple-guide/</guid>
-      <description>&lt;div class=&#34;notice notice-note&#34; &gt;&lt;span&gt;原文地址  &lt;a href=&#34;https://rogerdudler.github.io/git-guide/index.zh.html&#34;&gt;https://rogerdudler.github.io/git-guide/index.zh.html&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;http://git-scm.com/download/mac&#34;&gt;下载 git OSX 版&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://git-for-windows.github.io/&#34;&gt;下载 git Windows 版&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://book.git-scm.com/2_installing_git.html&#34;&gt;下载 git Linux 版&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;创建仓库&#34;&gt;创建仓库&lt;/h2&gt;
-&lt;p&gt;创建新文件夹，打开，然后执行
-&lt;font color=&#34;deeppink&#34;&gt;&lt;strong&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/strong&gt;&lt;/font&gt;
-以创建新的 git 仓库。&lt;/p&gt;
-&lt;h2 id=&#34;克隆仓库&#34;&gt;克隆仓库&lt;/h2&gt;
-&lt;p&gt;执行如下命令以创建一个本地仓库的克隆版本：&lt;/p&gt;
-&lt;p&gt;&lt;font color=&#34;deeppink&#34;&gt;&lt;strong&gt;&lt;code&gt;git clone /path/to/repository&lt;/code&gt;&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;如果是远端服务器上的仓库，你的命令会是这个样子：&lt;/p&gt;
-&lt;p&gt;&lt;font color=&#34;deeppink&#34;&gt;&lt;strong&gt;&lt;code&gt;git clone username@host:/path/to/repository&lt;/code&gt;&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;工作流&#34;&gt;工作流&lt;/h2&gt;
-&lt;p&gt;你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。&lt;/p&gt;</description>
+      <description>助你入门 git 的简明指南，木有高深内容</description>
     </item>
     
   </channel>
