@@ -6,7 +6,16 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 May 2023 00:17:58 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Oct 2024 02:48:16 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PaperMod Article Hidden</title>
+      <link>https://gfxkyz.github.io/posts/blog/papermod-article-hidden/</link>
+      <pubDate>Sat, 12 Oct 2024 02:48:16 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/blog/papermod-article-hidden/</guid>
+      <description>Hugo Theme PaperMod Add Hidden Article Function</description>
+    </item>
+    
     <item>
       <title>Git Permission Denied</title>
       <link>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</link>
@@ -23,15 +32,6 @@
       
       <guid>https://gfxkyz.github.io/posts/tech/redisscan/</guid>
       <description>scan命令详解</description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://gfxkyz.github.io/posts/blog/blog/</link>
-      <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
-      
-      <guid>https://gfxkyz.github.io/posts/blog/blog/</guid>
-      <description></description>
     </item>
     
     <item>

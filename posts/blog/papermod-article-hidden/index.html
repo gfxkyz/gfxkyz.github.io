@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>PaperMod Article Hidden | Home</title>
+<meta name="keywords" content="">
+<meta name="description" content="Hugo Theme PaperMod Add Hidden Article Function">
+<meta name="author" content="xYx">
+<link rel="canonical" href="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="apple-touch-icon" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="mask-icon" href="https://gfxkyz.github.io/img/Q.gif">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en-us" href="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="og:title" content="PaperMod Article Hidden" />
+<meta property="og:description" content="Hugo Theme PaperMod Add Hidden Article Function" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/" />
+<meta property="og:image" content="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/pah-cover.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-10-12T02:48:16+08:00" />
+<meta property="article:modified_time" content="2024-10-12T02:48:16+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/pah-cover.png" />
+<meta name="twitter:title" content="PaperMod Article Hidden"/>
+<meta name="twitter:description" content="Hugo Theme PaperMod Add Hidden Article Function"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "📚Posts",
+          "item": "https://gfxkyz.github.io/posts/"
+        },
+
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "🧱 Build Web Site",
+          "item": "https://gfxkyz.github.io/posts/blog/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "PaperMod Article Hidden",
+      "item": "https://gfxkyz.github.io/posts/blog/papermod-article-hidden/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PaperMod Article Hidden",
+  "name": "PaperMod Article Hidden",
+  "description": "Hugo Theme PaperMod Add Hidden Article Function",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "1. Edit Article YAML Add hidden: true in the article yaml section\n--- title: \"Article Title\" date: lastmod: author: hidden: true --- 2. Hide Article IN Article List Page File Path : \\layouts_default\\list.html\nInsert {{ if not .Params.hidden }}{{- end }} to the specified position\n{{ if not .Params.hidden }} \u003carticle class=\"{{ $class }}\"\u003e \u003cdiv class=\"post-info\"\u003e \u003cheader class=\"entry-header\"\u003e \u003ch2\u003e {{- .Title }} {{- if .Draft }}\u003csup\u003e\u003cspan class=\"entry-isdraft\"\u003e\u0026nbsp;\u0026nbsp;[draft]\u003c/span\u003e\u003c/sup\u003e{{- end }} \u003c/h2\u003e \u003c/header\u003e {{- if (ne (.Param \"hideSummary\") true) }} \u003csection class=\"entry-content\"\u003e \u003cp\u003e {{- if .Description }} {{ .Description }} {{- end }} {{ if .Truncated }}...{{ end }} \u003c/p\u003e \u003c/section\u003e {{- end }} {{- if not (.Param \"hideMeta\") }} \u003cfooter class=\"entry-footer\"\u003e {{- partial \"post_meta.html\" . -}} \u003c/footer\u003e {{- end }} \u003c/div\u003e {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }} {{- partial \"cover.html\" (dict \"cxt\" . \"IsHome\" true \"isHidden\" $isHidden) }} \u003ca class=\"entry-link\" aria-label=\"post link to {{ .Title | plainify }}\" href=\"{{ .Permalink }}\"\u003e\u003c/a\u003e \u003c/article\u003e {{- end }} {{- end }} 3. Archives 3.1 Hidden In Archives File Path : \\layouts\\_default\\archives.html\n\u003cdiv class=\"archive-posts\"\u003e {{- range .Pages }} {{- if not .Params.hidden }} {{- if eq .Kind \"page\" }} \u003cdiv class=\"archive-entry\"\u003e \u003ch3 class=\"archive-entry-title\"\u003e {{- .Title | markdownify }} {{- if .Draft }}\u003csup\u003e\u003cspan class=\"entry-isdraft\"\u003e\u0026nbsp;\u0026nbsp;[draft]\u003c/span\u003e\u003c/sup\u003e{{- end }} \u003c/h3\u003e \u003cdiv class=\"archive-meta\"\u003e {{- partial \"post_meta.html\" . -}} \u003c/div\u003e \u003ca class=\"entry-link\" aria-label=\"post link to {{ .Title | plainify }}\" href=\"{{ .Permalink }}\"\u003e\u003c/a\u003e \u003c/div\u003e {{- end }} {{- end }} {{- end }} \u003c/div\u003e 3.2 Not Count Hidden Article Year Counts \u003ch2 class=\"archive-year-header\"\u003e {{- replace .Key \"0001\" \"\" }} \u003csup class=\"archive-count\"\u003e\u0026nbsp;\u0026nbsp; {{- $visibleCount := 0 -}} {{- range .Pages }} {{- if not .Params.hidden }} {{- $visibleCount = add $visibleCount 1 -}} {{- end }} {{- end -}} {{- $visibleCount }} \u003c/sup\u003e \u003c/h2\u003e Month Counts \u003ch3 class=\"archive-month-header\"\u003e {{- .Key }} \u003csup class=\"archive-count\"\u003e\u0026nbsp;\u0026nbsp; {{- $visibleCount := 0 -}} {{- range .Pages }} {{- if not .Params.hidden }} {{- $visibleCount = add $visibleCount 1 -}} {{- end }} {{- end -}} {{- $visibleCount }} \u003c/sup\u003e \u003c/h3\u003e ",
+  "wordCount" : "418",
+  "inLanguage": "en-us",
+  "image":"https://gfxkyz.github.io/posts/blog/papermod-article-hidden/pah-cover.png","datePublished": "2024-10-12T02:48:16+08:00",
+  "dateModified": "2024-10-12T02:48:16+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "xYx"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gfxkyz.github.io/posts/blog/papermod-article-hidden/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gfxkyz.github.io/img/Q.gif"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gfxkyz.github.io/" accesskey="h" title="Mile Blog (Alt + H)">
+            <img src="https://gfxkyz.github.io/img/Q.gif" alt="logo" aria-label="logo"
+                 height="35">Mile Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gfxkyz.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
+                <span>🔍 Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/" title="🏠 Home">
+                <span>🏠 Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/posts" title="📚 Posts">
+                <span>📚 Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/tags" title="🧩 Tags">
+                <span>🧩 Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gfxkyz.github.io/archives/" title="⏱️ Archives">
+                <span>⏱️ Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+        <div class="post-password">
+        
+    </div>
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/blog/">🧱 Build Web Site</a></div>
+            <h1 class="post-title">
+                PaperMod Article Hidden
+            </h1>
+            <div class="post-description">
+                Hugo Theme PaperMod Add Hidden Article Function
+            </div>
+        </header> 
+<figure class="entry-cover1"><img style="zoom:;" loading="lazy" src="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/pah-cover.png" alt="">
+    
+</figure><aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-edit-article-yaml" aria-label="1. Edit Article YAML">1. Edit Article YAML</a></li>
+                <li>
+                    <a href="#2-hide-article-in-article-list-page" aria-label="2. Hide Article IN Article List Page">2. Hide Article IN Article List Page</a></li>
+                <li>
+                    <a href="#3-archives" aria-label="3. Archives">3. Archives</a><ul>
+                        
+                <li>
+                    <a href="#31-hidden-in-archives" aria-label="3.1 Hidden In Archives">3.1 Hidden In Archives</a></li>
+                <li>
+                    <a href="#32-not-count-hidden-article" aria-label="3.2 Not Count Hidden Article">3.2 Not Count Hidden Article</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h3 id="1-edit-article-yaml">1. Edit Article YAML<a hidden class="anchor" aria-hidden="true" href="#1-edit-article-yaml">#</a></h3>
+<p>Add <code>hidden: true</code> in the article yaml section</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;Article Title&#34;
+</span></span><span style="display:flex;"><span>date: 
+</span></span><span style="display:flex;"><span>lastmod: 
+</span></span><span style="display:flex;"><span>author: 
+</span></span><span style="display:flex;"><span>hidden: true
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><h3 id="2-hide-article-in-article-list-page">2. Hide Article IN Article List Page<a hidden class="anchor" aria-hidden="true" href="#2-hide-article-in-article-list-page">#</a></h3>
+<blockquote>
+<p>File Path : \layouts_default\list.html</p>
+</blockquote>
+<p>Insert <code>{{ if not .Params.hidden }}{{- end }}</code> to the specified position</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{ if not .Params.hidden }}<span style="color:#75715e">&lt;!-- hidden-md-edit begin --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $class }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-info&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;entry-header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>        {{- .Title }}
+</span></span><span style="display:flex;"><span>        {{- if .Draft }}&lt;<span style="color:#f92672">sup</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;entry-isdraft&#34;</span>&gt;&amp;nbsp;&amp;nbsp;[draft]&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">sup</span>&gt;{{- end }}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">header</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- if (ne (.Param &#34;hideSummary&#34;) true) }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;entry-content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        {{- if .Description }}
+</span></span><span style="display:flex;"><span>        {{ .Description }}
+</span></span><span style="display:flex;"><span>        {{- end }}
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- {{ .Summary | plainify | htmlUnescape }} --&gt;</span>
+</span></span><span style="display:flex;"><span>        {{ if .Truncated }}...{{ end }}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">section</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- end }}
+</span></span><span style="display:flex;"><span>    {{- if not (.Param &#34;hideMeta&#34;) }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;entry-footer&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      {{- partial &#34;post_meta.html&#34; . -}}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">footer</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- end }}
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
+</span></span><span style="display:flex;"><span>  {{- partial &#34;cover.html&#34; (dict &#34;cxt&#34; . &#34;IsHome&#34; true &#34;isHidden&#34; $isHidden) }}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;entry-link&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post link to {{ .Title | plainify }}&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">article</span>&gt;
+</span></span><span style="display:flex;"><span>{{- end }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- end }}<span style="color:#75715e">&lt;!-- hidden-md-edit end --&gt;</span>
+</span></span></code></pre></div><h3 id="3-archives">3. Archives<a hidden class="anchor" aria-hidden="true" href="#3-archives">#</a></h3>
+<h4 id="31-hidden-in-archives">3.1 Hidden In Archives<a hidden class="anchor" aria-hidden="true" href="#31-hidden-in-archives">#</a></h4>
+<p>File Path : <code>\layouts\_default\archives.html</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-posts&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- range .Pages }}
+</span></span><span style="display:flex;"><span>    {{- if not .Params.hidden }} <span style="color:#75715e">&lt;!-- Hidden-In-Archive Begin --&gt;</span>
+</span></span><span style="display:flex;"><span>    {{- if eq .Kind &#34;page&#34; }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-entry&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-entry-title&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        {{- .Title | markdownify }}
+</span></span><span style="display:flex;"><span>        {{- if .Draft }}&lt;<span style="color:#f92672">sup</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;entry-isdraft&#34;</span>&gt;&amp;nbsp;&amp;nbsp;[draft]&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">sup</span>&gt;{{- end }}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-meta&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        {{- partial &#34;post_meta.html&#34; . -}}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;entry-link&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post link to {{ .Title | plainify }}&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- end }}
+</span></span><span style="display:flex;"><span>    {{- end }}
+</span></span><span style="display:flex;"><span>    {{- end }}<span style="color:#75715e">&lt;!-- Hidden-In-Archive End --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><h4 id="32-not-count-hidden-article">3.2 Not Count Hidden Article<a hidden class="anchor" aria-hidden="true" href="#32-not-count-hidden-article">#</a></h4>
+<ul>
+<li>Year Counts</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;h2 class=&#34;archive-year-header&#34;&gt;{{- replace .Key &#34;0001&#34; &#34;&#34; }}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &lt;sup class=&#34;archive-count&#34;&gt;&amp;nbsp;&amp;nbsp;{{ len .Pages }}&lt;/sup&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;/h2&gt; 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 隐藏的文章不统计数量 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-year-header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>{{- replace .Key &#34;0001&#34; &#34;&#34; }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">sup</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-count&#34;</span>&gt;&amp;nbsp;&amp;nbsp;
+</span></span><span style="display:flex;"><span>    {{- $visibleCount := 0 -}}
+</span></span><span style="display:flex;"><span>    {{- range .Pages }}
+</span></span><span style="display:flex;"><span>    {{- if not .Params.hidden }}
+</span></span><span style="display:flex;"><span>        {{- $visibleCount = add $visibleCount 1 -}}
+</span></span><span style="display:flex;"><span>    {{- end }}
+</span></span><span style="display:flex;"><span>    {{- end -}}
+</span></span><span style="display:flex;"><span>    {{- $visibleCount }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">sup</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span></code></pre></div><ul>
+<li>Month Counts</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 按照月份统计文章数量 --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;h3 class=&#34;archive-month-header&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    {{- .Key }}&lt;sup class=&#34;archive-count&#34;&gt;&amp;nbsp;&amp;nbsp;{{ len .Pages }}&lt;/sup&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;/h3&gt; 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-month-header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- .Key }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">sup</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;archive-count&#34;</span>&gt;&amp;nbsp;&amp;nbsp;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 修改为不统计隐藏文章（按月份统计—） --&gt;</span>
+</span></span><span style="display:flex;"><span>    {{- $visibleCount := 0 -}}
+</span></span><span style="display:flex;"><span>    {{- range .Pages }}
+</span></span><span style="display:flex;"><span>        {{- if not .Params.hidden }}
+</span></span><span style="display:flex;"><span>        {{- $visibleCount = add $visibleCount 1 -}}
+</span></span><span style="display:flex;"><span>        {{- end }}
+</span></span><span style="display:flex;"><span>    {{- end -}}
+</span></span><span style="display:flex;"><span>    {{- $visibleCount }}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">sup</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span></code></pre></div>
+
+        </div>
+
+        <footer class="post-footer">
+            
+        </footer>
+    </div>
+</article>
+</main>
+
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Home"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                let textData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Home"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent +
+                    '\r\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Home"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        macTool.setAttribute('class', 'mac-tool')
+        macTool1.setAttribute('class', 'mac bb1')
+        macTool2.setAttribute('class', 'mac bb2')
+        macTool3.setAttribute('class', 'mac bb3')
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+</body>
+
+</html>
