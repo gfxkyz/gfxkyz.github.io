@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,17 +9,17 @@
 <meta name="keywords" content="Redis">
 <meta name="description" content="scan命令详解">
 <meta name="author" content="Sulv">
-<link rel="canonical" href="//localhost:1313/posts/tech/redisscan/">
+<link rel="canonical" href="https://gfxkyz.github.io/posts/tech/redisscan/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="//localhost:1313/img/Q.gif">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/img/Q.gif">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/img/Q.gif">
-<link rel="apple-touch-icon" href="//localhost:1313/img/Q.gif">
-<link rel="mask-icon" href="//localhost:1313/img/Q.gif">
+<link rel="icon" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="apple-touch-icon" href="https://gfxkyz.github.io/img/Q.gif">
+<link rel="mask-icon" href="https://gfxkyz.github.io/img/Q.gif">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh" href="//localhost:1313/posts/tech/redisscan/">
+<link rel="alternate" hreflang="zh" href="https://gfxkyz.github.io/posts/tech/redisscan/">
 <noscript>
     <style>
         #theme-toggle,
@@ -75,7 +75,7 @@ var _hmt = _hmt || [];
 <meta property="og:title" content="Redis scan命令学习" />
 <meta property="og:description" content="scan命令详解" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//localhost:1313/posts/tech/redisscan/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://gfxkyz.github.io/posts/tech/redisscan/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-30T15:55:23+08:00" />
 <meta property="article:modified_time" content="2022-11-30T15:55:23+08:00" />
 
@@ -94,20 +94,20 @@ var _hmt = _hmt || [];
           "@type": "ListItem",
           "position":  1 ,
           "name": "📚Posts",
-          "item": "//localhost:1313/posts/"
+          "item": "https://gfxkyz.github.io/posts/"
         },
 
         {
           "@type": "ListItem",
           "position":  2 ,
           "name": "👨🏻‍💻 Technology",
-          "item": "//localhost:1313/posts/tech/"
+          "item": "https://gfxkyz.github.io/posts/tech/"
         }, 
     {
       "@type": "ListItem",
       "position":  3 ,
       "name": "Redis scan命令学习",
-      "item": "//localhost:1313/posts/tech/redisscan/"
+      "item": "https://gfxkyz.github.io/posts/tech/redisscan/"
     }
   ]
 }
@@ -133,14 +133,14 @@ var _hmt = _hmt || [];
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/tech/redisscan/"
+    "@id": "https://gfxkyz.github.io/posts/tech/redisscan/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Home",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/img/Q.gif"
+      "url": "https://gfxkyz.github.io/img/Q.gif"
     }
   }
 }
@@ -175,8 +175,8 @@ var _hmt = _hmt || [];
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Mile Blog (Alt + H)">
-            <img src="//localhost:1313/img/Q.gif" alt="logo" aria-label="logo"
+            <a href="https://gfxkyz.github.io/" accesskey="h" title="Mile Blog (Alt + H)">
+            <img src="https://gfxkyz.github.io/img/Q.gif" alt="logo" aria-label="logo"
                  height="35">Mile Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
@@ -205,27 +205,27 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="//localhost:1313/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
+                <a href="https://gfxkyz.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
                 <span>🔍 Search</span>
                 </a>
             </li>
             <li>
-                <a href="//localhost:1313/" title="🏠 Home">
+                <a href="https://gfxkyz.github.io/" title="🏠 Home">
                 <span>🏠 Home</span>
                 </a>
             </li>
             <li>
-                <a href="//localhost:1313/posts" title="📚 Posts">
+                <a href="https://gfxkyz.github.io/posts" title="📚 Posts">
                 <span>📚 Posts</span>
                 </a>
             </li>
             <li>
-                <a href="//localhost:1313/tags" title="🧩 Tags">
+                <a href="https://gfxkyz.github.io/tags" title="🧩 Tags">
                 <span>🧩 Tags</span>
                 </a>
             </li>
             <li>
-                <a href="//localhost:1313/archives/" title="⏱️ Archives">
+                <a href="https://gfxkyz.github.io/archives/" title="⏱️ Archives">
                 <span>⏱️ Archives</span>
                 </a>
             </li>
@@ -247,7 +247,7 @@ var _hmt = _hmt || [];
     </div>
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="//localhost:1313/">🏠 Home</a>&nbsp;»&nbsp;<a href="//localhost:1313/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="//localhost:1313/posts/tech/">👨🏻‍💻 Technology</a></div>
+            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/tech/">👨🏻‍💻 Technology</a></div>
             <h1 class="post-title">
                 Redis scan命令学习
             </h1>
@@ -306,8 +306,8 @@ var _hmt = _hmt || [];
         <span class="fa fa-tags" style="opacity: 0.8"></span>
         <span>
             <span class="post-tags-meta">
-                <a href="//localhost:1313/tags/redis/" style="color: var(--secondary)!important;">Redis</a>
-                &nbsp;<a href="//localhost:1313/tags/tech/" style="color: var(--secondary)!important;">Tech</a>
+                <a href="https://gfxkyz.github.io/tags/redis/" style="color: var(--secondary)!important;">Redis</a>
+                &nbsp;<a href="https://gfxkyz.github.io/tags/tech/" style="color: var(--secondary)!important;">Tech</a>
             </span>
         </span>
     </span>
@@ -328,7 +328,7 @@ var _hmt = _hmt || [];
                             <script>
                                 let url = document.documentURI
                                 
-                                let dnsUrl = "//localhost:1313/"
+                                let dnsUrl = "https://gfxkyz.github.io/"
                                 let urlSplit = url.split(dnsUrl)
                                 let finalUrl = urlSplit[1]
                                 if (finalUrl[0] !== '/') {
@@ -548,12 +548,12 @@ var _hmt = _hmt || [];
                 <div id="QR" style="opacity: 0;">
                     <div id="wechat" style="display: inline-block">
                         <a class="fancybox" rel="group">
-                            <img id="wechat_qr" src="//localhost:1313/img/wechat_pay.png" alt="wechat_pay"></a>
+                            <img id="wechat_qr" src="https://gfxkyz.github.io/img/wechat_pay.png" alt="wechat_pay"></a>
                         <p>微信</p>
                     </div>
                     <div id="alipay" style="display: inline-block">
                         <a class="fancybox" rel="group">
-                            <img id="alipay_qr" src="//localhost:1313/img/alipay.png" alt="alipay"></a>
+                            <img id="alipay_qr" src="https://gfxkyz.github.io/img/alipay.png" alt="alipay"></a>
                         <p>支付宝</p>
                     </div>
                 </div>
