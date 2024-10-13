@@ -6,7 +6,16 @@
     <description>Recent content in Technology on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 May 2023 00:17:58 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Oct 2024 02:42:42 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Pic Bed</title>
+      <link>https://gfxkyz.github.io/posts/tech/github-pic-bed/</link>
+      <pubDate>Mon, 14 Oct 2024 02:42:42 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/tech/github-pic-bed/</guid>
+      <description>使用Github，PicGo和Typora搭建图床</description>
+    </item>
+    
     <item>
       <title>Git Permission Denied</title>
       <link>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</link>
