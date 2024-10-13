@@ -5,33 +5,35 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>MacOS Sequoia Install Hugo | Home</title>
+<title>Hugo Shortcodes | Home</title>
 <meta name="keywords" content="">
-<meta name="description" content="MacOS Version：Sequoia 15.0.1
-
-最近计划将Hexo创建的博客迁移到Hugo上，跟着CodeSheep大佬的视频进行Hugo的搭建。
-&lt;!DOCTYPE HTML&gt;
-
-
-    
-    
-
+<meta name="description" content="本文最后更新于2024-10-13，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。
 
 
     
     
     
+        Hugo Eye-catching Notice Box
     
     
-
+        日期: 2024-10-13
+        &nbsp;
+        标签:
+        
+            #Hugo&nbsp;
+        
     
-
-
-
-
-因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（具体问题忘记记录了，只是将文章收藏了。☺️）">
+    
+        本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。
+Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。
+{{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE &#34;(?is)^&lt;(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b&#34; $raw 1 -}} &lt;div class=&#34;notice {{ $noticeType }}&#34; {{ if len .Params | eq 2 }} id=&#34;{{ .Get 1 }}&#34; {{ end }}&gt; {{- if or $block (not $raw) }}{{ $raw }}{{ else }}&lt;span&gt;{{ $raw }}&lt;/span&gt;{{ end -}} &lt;/div&gt; Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码
+ ......
+    
+    
+    
+">
 <meta name="author" content="xYx">
-<link rel="canonical" href="https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/">
+<link rel="canonical" href="https://gfxkyz.github.io/posts/blog/hugo-shortcodes/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://gfxkyz.github.io/img/logo-light-1.png">
@@ -41,7 +43,7 @@
 <link rel="mask-icon" href="https://gfxkyz.github.io/img/logo-dark-1.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en-us" href="https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/">
+<link rel="alternate" hreflang="en-us" href="https://gfxkyz.github.io/posts/blog/hugo-shortcodes/">
 <noscript>
     <style>
         #theme-toggle,
@@ -68,60 +70,66 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta property="og:title" content="MacOS Sequoia Install Hugo" />
-<meta property="og:description" content="MacOS Version：Sequoia 15.0.1
-
-最近计划将Hexo创建的博客迁移到Hugo上，跟着CodeSheep大佬的视频进行Hugo的搭建。
-&lt;!DOCTYPE HTML&gt;
-
-
-    
-    
-
+<meta property="og:title" content="Hugo Shortcodes" />
+<meta property="og:description" content="本文最后更新于2024-10-13，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。
 
 
     
     
     
+        Hugo Eye-catching Notice Box
     
     
-
+        日期: 2024-10-13
+        &nbsp;
+        标签:
+        
+            #Hugo&nbsp;
+        
     
-
-
-
-
-因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（具体问题忘记记录了，只是将文章收藏了。☺️）" />
+    
+        本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。
+Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。
+{{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE &#34;(?is)^&lt;(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b&#34; $raw 1 -}} &lt;div class=&#34;notice {{ $noticeType }}&#34; {{ if len .Params | eq 2 }} id=&#34;{{ .Get 1 }}&#34; {{ end }}&gt; {{- if or $block (not $raw) }}{{ $raw }}{{ else }}&lt;span&gt;{{ $raw }}&lt;/span&gt;{{ end -}} &lt;/div&gt; Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码
+ ......
+    
+    
+    
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-10-12T23:28:15+08:00" />
-<meta property="article:modified_time" content="2024-10-12T23:28:15+08:00" />
+<meta property="og:url" content="https://gfxkyz.github.io/posts/blog/hugo-shortcodes/" />
+<meta property="og:image" content="https://gfxkyz.github.io/posts/blog/hugo-shortcodes/cover-shortcodes.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-10-13T16:23:39+08:00" />
+<meta property="article:modified_time" content="2024-10-13T16:23:39+08:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MacOS Sequoia Install Hugo"/>
-<meta name="twitter:description" content="MacOS Version：Sequoia 15.0.1
-
-最近计划将Hexo创建的博客迁移到Hugo上，跟着CodeSheep大佬的视频进行Hugo的搭建。
-&lt;!DOCTYPE HTML&gt;
-
-
-    
-    
-
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://gfxkyz.github.io/posts/blog/hugo-shortcodes/cover-shortcodes.png" />
+<meta name="twitter:title" content="Hugo Shortcodes"/>
+<meta name="twitter:description" content="本文最后更新于2024-10-13，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。
 
 
     
     
     
+        Hugo Eye-catching Notice Box
     
     
-
+        日期: 2024-10-13
+        &nbsp;
+        标签:
+        
+            #Hugo&nbsp;
+        
     
-
-
-
-
-因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（具体问题忘记记录了，只是将文章收藏了。☺️）"/>
+    
+        本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。
+Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。
+{{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE &#34;(?is)^&lt;(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b&#34; $raw 1 -}} &lt;div class=&#34;notice {{ $noticeType }}&#34; {{ if len .Params | eq 2 }} id=&#34;{{ .Get 1 }}&#34; {{ end }}&gt; {{- if or $block (not $raw) }}{{ $raw }}{{ else }}&lt;span&gt;{{ $raw }}&lt;/span&gt;{{ end -}} &lt;/div&gt; Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码
+ ......
+    
+    
+    
+"/>
 
 
 <script type="application/ld+json">
@@ -146,8 +154,8 @@ var _hmt = _hmt || [];
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "MacOS Sequoia Install Hugo",
-      "item": "https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/"
+      "name": "Hugo Shortcodes",
+      "item": "https://gfxkyz.github.io/posts/blog/hugo-shortcodes/"
     }
   ]
 }
@@ -156,24 +164,24 @@ var _hmt = _hmt || [];
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "MacOS Sequoia Install Hugo",
-  "name": "MacOS Sequoia Install Hugo",
-  "description": "MacOS Version：Sequoia 15.0.1 最近计划将Hexo创建的博客迁移到Hugo上，跟着CodeSheep大佬的视频进行Hugo的搭建。\n\u003c!DOCTYPE HTML\u003e 因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（具体问题忘记记录了，只是将文章收藏了。☺️）\n",
+  "headline": "Hugo Shortcodes",
+  "name": "Hugo Shortcodes",
+  "description": "本文最后更新于2024-10-13，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。 Hugo Eye-catching Notice Box 日期: 2024-10-13 \u0026nbsp; 标签: #Hugo\u0026nbsp; 本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。 Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。 {{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE \u0026#34;(?is)^\u0026lt;(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\\\b\u0026#34; $raw 1 -}} \u0026lt;div class=\u0026#34;notice {{ $noticeType }}\u0026#34; {{ if len .Params | eq 2 }} id=\u0026#34;{{ .Get 1 }}\u0026#34; {{ end }}\u0026gt; {{- if or $block (not $raw) }}{{ $raw }}{{ else }}\u0026lt;span\u0026gt;{{ $raw }}\u0026lt;/span\u0026gt;{{ end -}} \u0026lt;/div\u0026gt; Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码 ...... ",
   "keywords": [
     ""
   ],
-  "articleBody": "MacOS Version：Sequoia 15.0.1 最近计划将Hexo创建的博客迁移到Hugo上，跟着CodeSheep大佬的视频进行Hugo的搭建。\n\u003c!DOCTYPE HTML\u003e 因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（具体问题忘记记录了，只是将文章收藏了。☺️）\nMac M1/M2/M3 芯片环境配置以及常用软件安装 https://segmentfault.com/a/1190000044555877 Go下载安装及切换不同版本的方法 https://blog.csdn.net/tangPHP/article/details/137931449 Mac OS安装Python的pip https://www.cnblogs.com/zoubilin/p/17777386.html ",
-  "wordCount" : "213",
+  "articleBody": "本文最后更新于2024-10-13，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。 Hugo Eye-catching Notice Box 日期: 2024-10-13 标签: #Hugo 本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。 Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。 {{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE \"(?is)^\u003c(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\\\b\" $raw 1 -}} {{- if or $block (not $raw) }}{{ $raw }}{{ else }}{{ $raw }}{{ end -}} Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码 ...... ",
+  "wordCount" : "271",
   "inLanguage": "en-us",
-  "datePublished": "2024-10-12T23:28:15+08:00",
-  "dateModified": "2024-10-12T23:28:15+08:00",
+  "image":"https://gfxkyz.github.io/posts/blog/hugo-shortcodes/cover-shortcodes.png","datePublished": "2024-10-13T16:23:39+08:00",
+  "dateModified": "2024-10-13T16:23:39+08:00",
   "author":[{
     "@type": "Person",
     "name": "xYx"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/"
+    "@id": "https://gfxkyz.github.io/posts/blog/hugo-shortcodes/"
   },
   "publisher": {
     "@type": "Organization",
@@ -272,7 +280,7 @@ var _hmt = _hmt || [];
         <header class="post-header">
             <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/blog/">🧱 Build Web Site</a></div>
             <h1 class="post-title">
-                MacOS Sequoia Install Hugo
+                Hugo Shortcodes
             </h1>
             <div class="post-meta">
 
@@ -293,7 +301,7 @@ var _hmt = _hmt || [];
 <span class="parent-post-meta">
     <span id="post_meta_style_1">
         <span class="fa fa-calendar-check-o"></span>
-        <span>2024-10-12
+        <span>2024-10-13
             &nbsp;&nbsp;
         </span>
     </span>
@@ -306,7 +314,7 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>213字
+        <span>271字
             &nbsp;&nbsp;
         </span>
     </span>
@@ -326,6 +334,7 @@ var _hmt = _hmt || [];
         <span class="fa fa-tags" style="opacity: 0.8"></span>
         <span>
             <span class="post-tags-meta">
+                <a href="https://gfxkyz.github.io/tags/hugo/" style="color: var(--secondary)!important;">Hugo</a>
             </span>
         </span>
     </span>
@@ -379,70 +388,33 @@ var _hmt = _hmt || [];
 
 </div>
         </header> 
-        <div class="post-content"><div class="notice notice-tip" ><span>MacOS Version：Sequoia 15.0.1</span></div>
+        <div class="post-content"><div class="notice notice-info" ><span>本文最后更新于2024-10-13，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。</span></div>
 
-<p>最近计划将Hexo创建的博客迁移到Hugo上，跟着<a href="https://space.bilibili.com/384068749">CodeSheep</a>大佬的视频进行Hugo的搭建。</p>
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <style type="text/css">
-        .bilibili_shortcodes {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 66%;
-            margin: auto;
-            overflow: hidden;
-            text-align: center;
-             
-        }
-
-        .bilibili_shortcodes iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-        }
-    </style>
-    <title></title>
-</head>
-<body>
-<div class="bilibili_shortcodes">
-    <iframe
-            src="https://player.bilibili.com/player.html?bvid=BV1q4411i7gL&page=1&high_quality=1&danmaku=0&as_wide=0"
-            scrolling="no"
-            border="0"
-            frameborder="no"
-            framespacing="0"
-            allowfullscreen="true"
-    >
-    </iframe>
+<div style="height: 200px;margin: 1em auto;position: relative;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 25%), 0 0 2px rgb(0 0 0 / 25%);
+        border-radius: 15px;padding: 23px;max-width: 780px;background: var(--entry);">
     
     
+    <div style="font-size: 22px; font-weight: 600">
+        <a target="_blank" href="https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/" style="box-shadow: none">Hugo Eye-catching Notice Box</a>
+    </div>
+    <span style="font-size: 14px; color: #999">
+        日期: 2024-10-13
+        &nbsp;
+        标签:
+        
+            #Hugo&nbsp;
+        
+    </span>
+    <div style="font-size: 14px; line-height: 1.825;max-height: 75px; overflow: hidden;margin-top: 5px;">
+        本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。
+Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。
+{{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE &#34;(?is)^&lt;(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b&#34; $raw 1 -}} &lt;div class=&#34;notice {{ $noticeType }}&#34; {{ if len .Params | eq 2 }} id=&#34;{{ .Get 1 }}&#34; {{ end }}&gt; {{- if or $block (not $raw) }}{{ $raw }}{{ else }}&lt;span&gt;{{ $raw }}&lt;/span&gt;{{ end -}} &lt;/div&gt; Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码
+ ......
+    </div>
     
-
     
-
 </div>
-</body>
-</html>
-<p>因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（<font color="gray">具体问题忘记记录了，只是将文章收藏了。☺️</font>）</p>
-<ul>
-<li>Mac M1/M2/M3 芯片环境配置以及常用软件安装</li>
-</ul>
-<div class="notice notice-note" ><span><a href="https://segmentfault.com/a/1190000044555877">https://segmentfault.com/a/1190000044555877</a></span></div>
-
-<ul>
-<li>Go下载安装及切换不同版本的方法</li>
-</ul>
-<div class="notice notice-note" ><span><a href="https://blog.csdn.net/tangPHP/article/details/137931449">https://blog.csdn.net/tangPHP/article/details/137931449</a></span></div>
-
-<ul>
-<li>Mac OS安装Python的pip</li>
-</ul>
-<div class="notice notice-note" ><span><a href="https://www.cnblogs.com/zoubilin/p/17777386.html">https://www.cnblogs.com/zoubilin/p/17777386.html</a></span></div>
-
 
 
         </div>

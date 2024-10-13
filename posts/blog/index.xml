@@ -6,31 +6,106 @@
     <description>Recent content in 🧱 Build Web Site on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Oct 2024 23:28:15 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Oct 2024 16:23:39 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Macos Install Hugo Env</title>
-      <link>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</link>
-      <pubDate>Sat, 12 Oct 2024 23:28:15 +0800</pubDate>
+      <title>Hugo Shortcodes</title>
+      <link>https://gfxkyz.github.io/posts/blog/hugo-shortcodes/</link>
+      <pubDate>Sun, 13 Oct 2024 16:23:39 +0800</pubDate>
       
-      <guid>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</guid>
-      <description>&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/zoubilin/p/17777386.html&#34;&gt;https://www.cnblogs.com/zoubilin/p/17777386.html&lt;/a&gt;&lt;/p&gt;
-  &lt;footer&gt;
-    &lt;strong&gt;&lt;/strong&gt;
-    
-      
-        
-      
-    
-  &lt;/footer&gt;
-&lt;/blockquote&gt;
+      <guid>https://gfxkyz.github.io/posts/blog/hugo-shortcodes/</guid>
+      <description>&lt;div class=&#34;notice notice-info&#34; &gt;&lt;span&gt;本文最后更新于2024-10-13，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。&lt;/span&gt;&lt;/div&gt;
 
 &lt;div style=&#34;height: 200px;margin: 1em auto;position: relative;
         box-shadow: 0 2px 4px rgb(0 0 0 / 25%), 0 0 2px rgb(0 0 0 / 25%);
         border-radius: 15px;padding: 23px;max-width: 780px;background: var(--entry);&#34;&gt;
     
     
+    &lt;div style=&#34;font-size: 22px; font-weight: 600&#34;&gt;
+        &lt;a target=&#34;_blank&#34; href=&#34;https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/&#34; style=&#34;box-shadow: none&#34;&gt;Hugo Eye-catching Notice Box&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;span style=&#34;font-size: 14px; color: #999&#34;&gt;
+        日期: 2024-10-13
+        &amp;nbsp;
+        标签:
+        
+            #Hugo&amp;nbsp;
+        
+    &lt;/span&gt;
+    &lt;div style=&#34;font-size: 14px; line-height: 1.825;max-height: 75px; overflow: hidden;margin-top: 5px;&#34;&gt;
+        本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。
+Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。
+{{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE &amp;#34;(?is)^&amp;lt;(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b&amp;#34; $raw 1 -}} &amp;lt;div class=&amp;#34;notice {{ $noticeType }}&amp;#34; {{ if len .Params | eq 2 }} id=&amp;#34;{{ .Get 1 }}&amp;#34; {{ end }}&amp;gt; {{- if or $block (not $raw) }}{{ $raw }}{{ else }}&amp;lt;span&amp;gt;{{ $raw }}&amp;lt;/span&amp;gt;{{ end -}} &amp;lt;/div&amp;gt; Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码
+ ......
+    &lt;/div&gt;
+    
+    
 &lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo Eye-catching Notice Box</title>
+      <link>https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/</link>
+      <pubDate>Sun, 13 Oct 2024 15:31:16 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/</guid>
+      <description>Hugo添加醒目提醒框功能</description>
+    </item>
+    
+    <item>
+      <title>MacOS Sequoia Install Hugo</title>
+      <link>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</link>
+      <pubDate>Sat, 12 Oct 2024 23:28:15 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</guid>
+      <description>&lt;div class=&#34;notice notice-tip&#34; &gt;&lt;span&gt;MacOS Version：Sequoia 15.0.1&lt;/span&gt;&lt;/div&gt;
+
+&lt;p&gt;最近计划将Hexo创建的博客迁移到Hugo上，跟着&lt;a href=&#34;https://space.bilibili.com/384068749&#34;&gt;CodeSheep&lt;/a&gt;大佬的视频进行Hugo的搭建。&lt;/p&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+    &lt;style type=&#34;text/css&#34;&gt;
+        .bilibili_shortcodes {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 66%;
+            margin: auto;
+            overflow: hidden;
+            text-align: center;
+             
+        }
+
+        .bilibili_shortcodes iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+    &lt;/style&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;bilibili_shortcodes&#34;&gt;
+    &lt;iframe
+            src=&#34;https://player.bilibili.com/player.html?bvid=BV1q4411i7gL&amp;page=1&amp;high_quality=1&amp;danmaku=0&amp;as_wide=0&#34;
+            scrolling=&#34;no&#34;
+            border=&#34;0&#34;
+            frameborder=&#34;no&#34;
+            framespacing=&#34;0&#34;
+            allowfullscreen=&#34;true&#34;
+    &gt;
+    &lt;/iframe&gt;
+    
+    
+    
+
+    
+
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;p&gt;因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（&lt;font color=&#34;gray&#34;&gt;具体问题忘记记录了，只是将文章收藏了。☺️&lt;/font&gt;）&lt;/p&gt;</description>
     </item>
     
     <item>
