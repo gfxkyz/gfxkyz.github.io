@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Git Permission Denied | Home</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="Git">
 <meta name="description" content="使用git push命令推送文件时报错Permission Denied(publickey)">
 <meta name="author" content="XXXIYU">
 <link rel="canonical" href="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/">
@@ -50,12 +50,12 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="使用git push命令推送文件时报错Permission Denied(publickey)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/" />
-<meta property="og:image" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/Git-Permission-Denied.png" /><meta property="article:section" content="posts" />
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/Git-Permission-Denied.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-05-05T00:17:58+08:00" />
 <meta property="article:modified_time" content="2023-05-05T00:17:58+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://gfxkyz.github.io/posts/tech/git-push-permission-denied/Git-Permission-Denied.png" />
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/Git-Permission-Denied.png" />
 <meta name="twitter:title" content="Git Permission Denied"/>
 <meta name="twitter:description" content="使用git push命令推送文件时报错Permission Denied(publickey)"/>
 
@@ -69,14 +69,14 @@ var _hmt = _hmt || [];
         {
           "@type": "ListItem",
           "position":  1 ,
-          "name": "📚Posts",
+          "name": "Posts",
           "item": "https://gfxkyz.github.io/posts/"
         },
 
         {
           "@type": "ListItem",
           "position":  2 ,
-          "name": "👨🏻‍💻 Technology",
+          "name": "Technology",
           "item": "https://gfxkyz.github.io/posts/tech/"
         }, 
     {
@@ -96,12 +96,12 @@ var _hmt = _hmt || [];
   "name": "Git Permission Denied",
   "description": "使用git push命令推送文件时报错Permission Denied(publickey)",
   "keywords": [
-    ""
+    "Git"
   ],
   "articleBody": " Generate ssh key 首先，如果没有ssh key的话在控制台输入ssh-keygen -t rsa -C \"xx@example.com\"并执行。 途中会让输入密码不用管，直接一路回车直至生成你的ssh key。\n注意：如果重新生成将会覆盖之前生成的ssh key\n第二步执行命令ssh -v git@github.com，在最后面两句将出现： 第三步再执行ssh-agent -s会出现如下图所示信息。 接着输入ssh-add ~/.ssh/id_rsa后会提示 如果出现 Could not open a connection to your authentication agent. 的错误，先执行一下 eval `ssh-agent -s`,再继续执行ssh-add ~/.ssh/id_rsa基本上就可以了。\n打开刚刚生成的id_rsa.pub，复制里面的内容，进入github账号的settings页面，在 SSH and GPG Keys 设置中找到 New SSH Key。 Title任意命个名，把刚才复制的内容粘贴进key中，完成后点击Add SSH Key。\n最后使用ssh -T git@github.com验证Key，出现如下信息后就搞定了。 ",
   "wordCount" : "417",
   "inLanguage": "en-us",
-  "image":"https://gfxkyz.github.io/posts/tech/git-push-permission-denied/Git-Permission-Denied.png","datePublished": "2023-05-05T00:17:58+08:00",
+  "image":"https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/Git-Permission-Denied.png","datePublished": "2023-05-05T00:17:58+08:00",
   "dateModified": "2023-05-05T00:17:58+08:00",
   "author":[{
     "@type": "Person",
@@ -164,28 +164,23 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gfxkyz.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
-                <span>🔍 Search</span>
+                <a href="https://gfxkyz.github.io/search" title="Search (Alt &#43; /)" accesskey=/>
+                <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/" title="🏠 Home">
-                <span>🏠 Home</span>
+                <a href="https://gfxkyz.github.io/posts" title="Posts">
+                <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/posts" title="📚 Posts">
-                <span>📚 Posts</span>
+                <a href="https://gfxkyz.github.io/tags" title="Tags">
+                <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/tags" title="🧩 Tags">
-                <span>🧩 Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://gfxkyz.github.io/archives/" title="⏱️ Archives">
-                <span>⏱️ Archives</span>
+                <a href="https://gfxkyz.github.io/archives/" title="Archives">
+                <span>Archives</span>
                 </a>
             </li>
         </ul>
@@ -206,7 +201,7 @@ var _hmt = _hmt || [];
     </div>
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/tech/">👨🏻‍💻 Technology</a></div>
+            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/tech/">Technology</a></div>
             <h1 class="post-title">
                 Git Permission Denied
             </h1>
@@ -222,29 +217,29 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>注意：如果重新生成将会覆盖之前生成的ssh key</p>
 </blockquote>
-<img src="001.png">
+<img src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/001.png">
 <ol start="2">
 <li>第二步执行命令<code>ssh -v git@github.com</code>，在最后面两句将出现：</li>
 </ol>
-<img src="002.png">
+<img src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/002.png">
 <ol start="3">
 <li>第三步再执行<code>ssh-agent -s</code>会出现如下图所示信息。</li>
 </ol>
-<img src="003.png">
+<img src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/003.png">
 <ol start="4">
 <li>接着输入ssh-add ~/.ssh/id_rsa后会提示</li>
 </ol>
-<img src="004.png">
+<img src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/004.png">
 <p>如果出现 <strong>Could not open a connection to your authentication agent.</strong> 的错误，先执行一下 <font color="deeppink">eval `ssh-agent -s`</font>,再继续执行<code>ssh-add ~/.ssh/id_rsa</code>基本上就可以了。</p>
 <ol start="5">
 <li>打开刚刚生成的id_rsa.pub，复制里面的内容，进入github账号的settings页面，在 <strong>SSH and GPG Keys</strong> 设置中找到 <strong>New SSH Key</strong>。</li>
 </ol>
 <p>Title任意命个名，把刚才复制的内容粘贴进key中，完成后点击Add SSH Key。</p>
-<img src="005.png">
+<img src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/005.png">
 <ol start="6">
 <li>最后使用<code>ssh -T git@github.com</code>验证Key，出现如下信息后就搞定了。</li>
 </ol>
-<img src="006.png">
+<img src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-push-permission-denied/006.png">
 
         </div>
 

@@ -6,7 +6,16 @@
     <description>Recent content in Git on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Oct 2021 02:40:47 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 May 2023 00:17:58 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Permission Denied</title>
+      <link>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</link>
+      <pubDate>Fri, 05 May 2023 00:17:58 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</guid>
+      <description>使用git push命令推送文件时报错Permission Denied(publickey)</description>
+    </item>
+    
     <item>
       <title>Git 简明指南</title>
       <link>https://gfxkyz.github.io/posts/tech/git-simple-guide/</link>

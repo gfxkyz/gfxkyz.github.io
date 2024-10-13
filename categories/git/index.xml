@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Git on Home</title>
+    <link>https://gfxkyz.github.io/categories/git/</link>
+    <description>Recent content in Git on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 May 2023 00:17:58 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Permission Denied</title>
+      <link>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</link>
+      <pubDate>Fri, 05 May 2023 00:17:58 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</guid>
+      <description>使用git push命令推送文件时报错Permission Denied(publickey)</description>
+    </item>
+    
+    <item>
+      <title>Git 简明指南</title>
+      <link>https://gfxkyz.github.io/posts/tech/git-simple-guide/</link>
+      <pubDate>Sun, 10 Oct 2021 02:40:47 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/tech/git-simple-guide/</guid>
+      <description>助你入门 git 的简明指南，木有高深内容</description>
+    </item>
+    
+  </channel>
+</rss>

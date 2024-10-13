@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Git 简明指南 | Home</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="Git">
 <meta name="description" content="助你入门 git 的简明指南，木有高深内容">
 <meta name="author" content="Roger Dudler, xYx">
 <link rel="canonical" href="https://gfxkyz.github.io/posts/tech/git-simple-guide/">
@@ -50,12 +50,12 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="助你入门 git 的简明指南，木有高深内容" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gfxkyz.github.io/posts/tech/git-simple-guide/" />
-<meta property="og:image" content="https://gfxkyz.github.io/posts/tech/git-simple-guide/gIt-simple-guide-cover.gif" /><meta property="article:section" content="posts" />
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-simple-guide/gIt-simple-guide-cover.gif" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-10-10T02:40:47+08:00" />
 <meta property="article:modified_time" content="2024-07-10T02:40:47+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://gfxkyz.github.io/posts/tech/git-simple-guide/gIt-simple-guide-cover.gif" />
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-simple-guide/gIt-simple-guide-cover.gif" />
 <meta name="twitter:title" content="Git 简明指南"/>
 <meta name="twitter:description" content="助你入门 git 的简明指南，木有高深内容"/>
 
@@ -69,14 +69,14 @@ var _hmt = _hmt || [];
         {
           "@type": "ListItem",
           "position":  1 ,
-          "name": "📚Posts",
+          "name": "Posts",
           "item": "https://gfxkyz.github.io/posts/"
         },
 
         {
           "@type": "ListItem",
           "position":  2 ,
-          "name": "👨🏻‍💻 Technology",
+          "name": "Technology",
           "item": "https://gfxkyz.github.io/posts/tech/"
         }, 
     {
@@ -96,12 +96,12 @@ var _hmt = _hmt || [];
   "name": "Git 简明指南",
   "description": "助你入门 git 的简明指南，木有高深内容",
   "keywords": [
-    ""
+    "Git"
   ],
-  "articleBody": "原文地址 https://rogerdudler.github.io/git-guide/index.zh.html \u003c!DOCTYPE HTML\u003e 安装 下载 git OSX 版\n下载 git Windows 版\n下载 git Linux 版\n创建仓库 创建新文件夹，打开，然后执行 git init 以创建新的 git 仓库。\n克隆仓库 执行如下命令以创建一个本地仓库的克隆版本：\ngit clone /path/to/repository\n如果是远端服务器上的仓库，你的命令会是这个样子：\ngit clone username@host:/path/to/repository\n工作流 你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。\n添加和提交 你可以提出更改（把它们添加到暂存区），使用如下命令：\ngit add git add *\n这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：\ngit commit -m \"代码提交信息\"\n现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库\n推送改动 你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：\ngit push origin master\n可以把 master 换成你想要推送的任何分支。\n如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：\ngit remote add origin 如此你就能够将你的改动推送到所添加的服务器上去了。\n分支 分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。\n创建一个叫做“feature_x”的分支，并切换过去：\ngit checkout -b feature_x\n切换回主分支：\ngit checkout master\n再把新建的分支删掉：\ngit branch -d feature_x\n除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：\ngit push origin 更新与合并 要更新你的本地仓库至最新改动，执行：\ngit pull\n以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。 要合并其他分支到你的当前分支（例如 master），执行：\ngit merge 在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现冲突（conflicts）。 这时候就需要你修改这些文件来手动合并这些冲突（conflicts）。改完之后，你需要执行如下命令以将它们标记为合并成功：\ngit add 在合并改动之前，你可以使用如下命令预览差异：\ngit diff 标签 为软件发布创建标签是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 1.0.0 的标签：\ngit tag 1.0.0 1b2e1d63ff\n1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：\ngit log\n你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。\nlog 如果你想了解本地仓库的历史记录，最简单的命令就是使用:\ngit log\n你可以添加一些参数来修改他的输出，从而得到自己想要的结果。 只看某一个人的提交记录:\ngit log --author=bob\n一个压缩后的每一条提交记录只占一行的输出:\ngit log --pretty=oneline\n或者你想通过 ASCII 艺术的树形结构来展示所有的分支, 每个分支都标示了他的名字和标签:\ngit log --graph --oneline --decorate --all\n看看哪些文件改变了:\ngit log --name-status\n这些只是你可以使用的参数中很小的一部分。更多的信息，参考：\ngit log --help\n替换本地改动 假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：\ngit checkout -- 此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。\n假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：\ngit fetch origin\ngit reset --hard origin/master\n实用小贴士 内建的图形化 git：\ngitk\n彩色的 git 输出：\ngit config color.ui true\n显示历史记录时，每个提交的信息只显示一行：\ngit config format.pretty oneline\n交互式添加文件到暂存区：\ngit add -i\n链接与资源 图形化客户端 GitX (L) (OSX, 开源软件) Tower (OSX) Source Tree (OSX, 免费) GitHub for Mac (OSX, 免费) GitBox (OSX, App Store) 指南和手册 Git 社区参考书 专业 Git 像 git 那样思考 GitHub 帮助 图解 Git ",
+  "articleBody": " 原文地址 https://rogerdudler.github.io/git-guide/index.zh.html \u003c!DOCTYPE HTML\u003e 安装 下载 git OSX 版\n下载 git Windows 版\n下载 git Linux 版\n创建仓库 创建新文件夹，打开，然后执行 git init 以创建新的 git 仓库。\n克隆仓库 执行如下命令以创建一个本地仓库的克隆版本：\ngit clone /path/to/repository\n如果是远端服务器上的仓库，你的命令会是这个样子：\ngit clone username@host:/path/to/repository\n工作流 你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。\n添加和提交 你可以提出更改（把它们添加到暂存区），使用如下命令：\ngit add git add *\n这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：\ngit commit -m \"代码提交信息\"\n现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库\n推送改动 你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：\ngit push origin master\n可以把 master 换成你想要推送的任何分支。\n如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：\ngit remote add origin 如此你就能够将你的改动推送到所添加的服务器上去了。\n分支 分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。\n创建一个叫做“feature_x”的分支，并切换过去：\ngit checkout -b feature_x\n切换回主分支：\ngit checkout master\n再把新建的分支删掉：\ngit branch -d feature_x\n除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：\ngit push origin 更新与合并 要更新你的本地仓库至最新改动，执行：\ngit pull\n以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。 要合并其他分支到你的当前分支（例如 master），执行：\ngit merge 在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现冲突（conflicts）。 这时候就需要你修改这些文件来手动合并这些冲突（conflicts）。改完之后，你需要执行如下命令以将它们标记为合并成功：\ngit add 在合并改动之前，你可以使用如下命令预览差异：\ngit diff 标签 为软件发布创建标签是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 1.0.0 的标签：\ngit tag 1.0.0 1b2e1d63ff\n1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：\ngit log\n你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。\nlog 如果你想了解本地仓库的历史记录，最简单的命令就是使用:\ngit log\n你可以添加一些参数来修改他的输出，从而得到自己想要的结果。 只看某一个人的提交记录:\ngit log --author=bob\n一个压缩后的每一条提交记录只占一行的输出:\ngit log --pretty=oneline\n或者你想通过 ASCII 艺术的树形结构来展示所有的分支, 每个分支都标示了他的名字和标签:\ngit log --graph --oneline --decorate --all\n看看哪些文件改变了:\ngit log --name-status\n这些只是你可以使用的参数中很小的一部分。更多的信息，参考：\ngit log --help\n替换本地改动 假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：\ngit checkout -- 此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。\n假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：\ngit fetch origin\ngit reset --hard origin/master\n实用小贴士 内建的图形化 git：\ngitk\n彩色的 git 输出：\ngit config color.ui true\n显示历史记录时，每个提交的信息只显示一行：\ngit config format.pretty oneline\n交互式添加文件到暂存区：\ngit add -i\n链接与资源 图形化客户端 GitX (L) (OSX, 开源软件) Tower (OSX) Source Tree (OSX, 免费) GitHub for Mac (OSX, 免费) GitBox (OSX, App Store) 指南和手册 Git 社区参考书 专业 Git 像 git 那样思考 GitHub 帮助 图解 Git ",
   "wordCount" : "1440",
   "inLanguage": "en-us",
-  "image":"https://gfxkyz.github.io/posts/tech/git-simple-guide/gIt-simple-guide-cover.gif","datePublished": "2021-10-10T02:40:47+08:00",
+  "image":"https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-simple-guide/gIt-simple-guide-cover.gif","datePublished": "2021-10-10T02:40:47+08:00",
   "dateModified": "2024-07-10T02:40:47+08:00",
   "author":[{
     "@type": "Person",
@@ -167,28 +167,23 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gfxkyz.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
-                <span>🔍 Search</span>
+                <a href="https://gfxkyz.github.io/search" title="Search (Alt &#43; /)" accesskey=/>
+                <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/" title="🏠 Home">
-                <span>🏠 Home</span>
+                <a href="https://gfxkyz.github.io/posts" title="Posts">
+                <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/posts" title="📚 Posts">
-                <span>📚 Posts</span>
+                <a href="https://gfxkyz.github.io/tags" title="Tags">
+                <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/tags" title="🧩 Tags">
-                <span>🧩 Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://gfxkyz.github.io/archives/" title="⏱️ Archives">
-                <span>⏱️ Archives</span>
+                <a href="https://gfxkyz.github.io/archives/" title="Archives">
+                <span>Archives</span>
                 </a>
             </li>
         </ul>
@@ -209,7 +204,7 @@ var _hmt = _hmt || [];
     </div>
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/tech/">👨🏻‍💻 Technology</a></div>
+            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/tech/">Technology</a></div>
             <h1 class="post-title">
                 Git 简明指南
             </h1>
@@ -428,7 +423,9 @@ var _hmt = _hmt || [];
         return rect.top + win.pageYOffset;
     }
 </script>
-        <div class="post-content"><div class="notice notice-note" ><span>原文地址  <a href="https://rogerdudler.github.io/git-guide/index.zh.html">https://rogerdudler.github.io/git-guide/index.zh.html</a></span></div>
+        <div class="post-content"><p><img loading="lazy" src="" alt=""  />
+</p>
+<div class="notice notice-note" ><span>原文地址  <a href="https://rogerdudler.github.io/git-guide/index.zh.html">https://rogerdudler.github.io/git-guide/index.zh.html</a></span></div>
 
 <!DOCTYPE HTML>
 <html lang="en">
@@ -454,7 +451,7 @@ var _hmt = _hmt || [];
     <iframe id="googleSlideIframe"
             width="100%"
             height="100%"
-            src="git-cheat-sheet.pdf"
+            src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-simple-guide/git-cheat-sheet.pdf"
             frameborder="0"
             allowfullscreen="" >
     </iframe>
@@ -476,7 +473,7 @@ var _hmt = _hmt || [];
 <p><font color="deeppink"><strong><code>git clone username@host:/path/to/repository</code></strong></font></p>
 <h2 id="工作流">工作流<a hidden class="anchor" aria-hidden="true" href="#工作流">#</a></h2>
 <p>你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。</p>
-<img src="git-trees.png">
+<img src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-simple-guide/git-trees.png">
 <h2 id="添加和提交">添加和提交<a hidden class="anchor" aria-hidden="true" href="#添加和提交">#</a></h2>
 <p>你可以提出更改（把它们添加到暂存区），使用如下命令：</p>
 <p><font font-size="30px" color="deeppink"><strong><code>git add &lt;filename&gt;</code></strong></font></p>
@@ -493,7 +490,8 @@ var _hmt = _hmt || [];
 <p>如此你就能够将你的改动推送到所添加的服务器上去了。</p>
 <h2 id="分支">分支<a hidden class="anchor" aria-hidden="true" href="#分支">#</a></h2>
 <p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
-<img src="git-branches.png">
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/tech/git-simple-guide/git-branches.png" alt=""  />
+</p>
 <p>创建一个叫做“feature_x”的分支，并切换过去：</p>
 <p><font color="deeppink"><strong><code>git checkout -b feature_x</code></strong></font></p>
 <p>切换回主分支：</p>

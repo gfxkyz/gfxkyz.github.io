@@ -52,12 +52,30 @@ Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，�
     </item>
     
     <item>
+      <title>MacOS Sequoia Install Hugo</title>
+      <link>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</link>
+      <pubDate>Sat, 12 Oct 2024 23:28:15 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</guid>
+      <description>MacOS Version：Sequoia 15.0.1</description>
+    </item>
+    
+    <item>
       <title>PaperMod Article Hidden</title>
       <link>https://gfxkyz.github.io/posts/blog/papermod-article-hidden/</link>
       <pubDate>Sat, 12 Oct 2024 02:48:16 +0800</pubDate>
       
       <guid>https://gfxkyz.github.io/posts/blog/papermod-article-hidden/</guid>
       <description>Hugo Theme PaperMod Add Hidden Article Function</description>
+    </item>
+    
+    <item>
+      <title>Shortcodes Demo</title>
+      <link>https://gfxkyz.github.io/posts/tech/demo/</link>
+      <pubDate>Thu, 05 May 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/posts/tech/demo/</guid>
+      <description>Gellery, Notice</description>
     </item>
     
   </channel>

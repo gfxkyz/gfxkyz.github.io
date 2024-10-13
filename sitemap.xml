@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gfxkyz.github.io/posts/</loc>
+    <loc>https://gfxkyz.github.io/posts/blog/</loc>
     <lastmod>2024-10-13T16:23:39+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/</loc>
@@ -14,35 +14,41 @@
     <loc>https://gfxkyz.github.io/posts/blog/hugo-shortcodes/</loc>
     <lastmod>2024-10-13T16:23:39+08:00</lastmod>
   </url><url>
+    <loc>https://gfxkyz.github.io/posts/</loc>
+    <lastmod>2024-10-13T16:23:39+08:00</lastmod>
+  </url><url>
     <loc>https://gfxkyz.github.io/tags/</loc>
     <lastmod>2024-10-13T16:23:39+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/posts/blog/</loc>
-    <lastmod>2024-10-13T16:23:39+08:00</lastmod>
+    <loc>https://gfxkyz.github.io/categories/</loc>
+    <lastmod>2024-10-13T15:31:16+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/categories/hugo/</loc>
+    <lastmod>2024-10-13T15:31:16+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/</loc>
     <lastmod>2024-10-13T15:31:16+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</loc>
+    <loc>https://gfxkyz.github.io/tags/macos-sequoia/</loc>
     <lastmod>2024-10-12T23:28:15+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/tags/papermod/</loc>
-    <lastmod>2024-10-12T02:48:16+08:00</lastmod>
+    <loc>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</loc>
+    <lastmod>2024-10-12T23:28:15+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/blog/papermod-article-hidden/</loc>
     <lastmod>2024-10-12T02:48:16+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/posts/tech/</loc>
+    <loc>https://gfxkyz.github.io/tags/git/</loc>
+    <lastmod>2024-07-10T02:40:47+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/categories/git/</loc>
     <lastmod>2024-07-10T02:40:47+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/tech/git-push-permission-denied/</loc>
     <lastmod>2023-05-05T00:17:58+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/tags/tech/</loc>
-    <lastmod>2023-05-05T00:17:58+08:00</lastmod>
-  </url><url>
-    <loc>https://gfxkyz.github.io/categories/</loc>
-    <lastmod>2022-11-30T15:55:23+08:00</lastmod>
+    <loc>https://gfxkyz.github.io/posts/tech/</loc>
+    <lastmod>2024-07-10T02:40:47+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/tags/redis/</loc>
     <lastmod>2022-11-30T15:55:23+08:00</lastmod>
@@ -53,23 +59,23 @@
     <loc>https://gfxkyz.github.io/posts/tech/redisscan/</loc>
     <lastmod>2022-11-30T15:55:23+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/tags/life/</loc>
+    <loc>https://gfxkyz.github.io/posts/life/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/life/life/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
   </url><url>
-    <loc>https://gfxkyz.github.io/posts/life/</loc>
-    <lastmod>2022-05-05T00:18:15+08:00</lastmod>
-  </url><url>
     <loc>https://gfxkyz.github.io/posts/read/</loc>
-    <lastmod>2022-05-05T00:18:06+08:00</lastmod>
-  </url><url>
-    <loc>https://gfxkyz.github.io/tags/read/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/read/read/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/tags/hugo-shortcodes/</loc>
+    <lastmod>2022-05-05T00:17:58+08:00</lastmod>
+  </url><url>
+    <loc>https://gfxkyz.github.io/categories/hugo-shortcodes/</loc>
+    <lastmod>2022-05-05T00:17:58+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/tech/demo/</loc>
     <lastmod>2022-05-05T00:17:58+08:00</lastmod>
@@ -79,9 +85,6 @@
   </url><url>
     <loc>https://gfxkyz.github.io/about/</loc>
     <lastmod>2021-11-06T14:57:28+08:00</lastmod>
-  </url><url>
-    <loc>https://gfxkyz.github.io/tags/git/</loc>
-    <lastmod>2024-07-10T02:40:47+08:00</lastmod>
   </url><url>
     <loc>https://gfxkyz.github.io/posts/tech/git-simple-guide/</loc>
     <lastmod>2024-07-10T02:40:47+08:00</lastmod>

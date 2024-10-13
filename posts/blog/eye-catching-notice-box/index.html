@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Hugo Eye-catching Notice Box | Home</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="Hugo">
 <meta name="description" content="Hugo添加醒目提醒框功能">
 <meta name="author" content="xYx">
 <link rel="canonical" href="https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/">
@@ -50,12 +50,12 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="Hugo添加醒目提醒框功能" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/" />
-<meta property="og:image" content="https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/Eye-catching-Notice.png" /><meta property="article:section" content="posts" />
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/blog/eye-catching-notice-box/eye-catching-notice.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-10-13T15:31:16+08:00" />
 <meta property="article:modified_time" content="2024-10-13T15:31:16+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/Eye-catching-Notice.png" />
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/blog/eye-catching-notice-box/eye-catching-notice.png" />
 <meta name="twitter:title" content="Hugo Eye-catching Notice Box"/>
 <meta name="twitter:description" content="Hugo添加醒目提醒框功能"/>
 
@@ -69,14 +69,14 @@ var _hmt = _hmt || [];
         {
           "@type": "ListItem",
           "position":  1 ,
-          "name": "📚Posts",
+          "name": "Posts",
           "item": "https://gfxkyz.github.io/posts/"
         },
 
         {
           "@type": "ListItem",
           "position":  2 ,
-          "name": "🧱 Build Web Site",
+          "name": "Build Web Site Experience",
           "item": "https://gfxkyz.github.io/posts/blog/"
         }, 
     {
@@ -96,12 +96,12 @@ var _hmt = _hmt || [];
   "name": "Hugo Eye-catching Notice Box",
   "description": "Hugo添加醒目提醒框功能",
   "keywords": [
-    ""
+    "Hugo"
   ],
   "articleBody": "本文为hugo添加醒目提醒框功能使用的方法是添加shortcodes以及对应的css。\nShortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，添加如下代码。\n{{- $noticeType := .Get 0 -}} {{- $raw := (markdownify .Inner | chomp) -}} {{- $block := findRE \"(?is)^\u003c(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\\\b\" $raw 1 -}} \u003cdiv class=\"notice {{ $noticeType }}\" {{ if len .Params | eq 2 }} id=\"{{ .Get 1 }}\" {{ end }}\u003e {{- if or $block (not $raw) }}{{ $raw }}{{ else }}\u003cspan\u003e{{ $raw }}\u003c/span\u003e{{ end -}} \u003c/div\u003e Css 接下来找到hugo存放自定义css的文件/assets/css/extended/blank.css添加如下css代码\n/* notice标签 */ .notice { position:relative; padding: 1em 1em 1em 1em; margin-bottom: 1em; border-radius: 4px; p:last-child { margin-bottom: 0; } \u0026.notice-warning { background: hsla(0, 65%, 65%, 0.15); border-left: 5px solid hsl(0, 65%, 65%); .notice-title { color: hsl(0, 65%, 65%); } } \u0026.notice-info { background: hsla(30, 80%, 70%, 0.15); border-left: 5px solid hsl(30, 80%, 70%); .notice-title { color: hsl(30, 80%, 70%); } } \u0026.notice-note { background: hsla(200, 65%, 65%, 0.15); border-left: 5px solid hsl(200, 65%, 65%); .notice-title { color: hsl(200, 65%, 65%); } } \u0026.notice-tip { background: hsla(140, 65%, 65%, 0.15); border-left: 5px solid hsl(140, 65%, 65%); .notice-title { color: hsl(140, 65%, 65%); } } } [data-theme=\"dark\"] .notice { \u0026.notice-warning { background: hsla(0, 25%, 35%, 0.15); border-left: 5px solid hsl(0, 25%, 35%); .notice-title { color: hsl(0, 25%, 35%); } } \u0026.notice-info { background: hsla(30, 25%, 35%, 0.15); border-left: 5px solid hsl(30, 25%, 35%); .notice-title { color: hsl(30, 25%, 35%); } } \u0026.notice-note { background: hsla(200, 25%, 35%, 0.15); border-left: 5px solid hsl(200, 25%, 35%); .notice-title { color: hsl(200, 25%, 35%); } } \u0026.notice-tip { background: hsla(140, 25%, 35%, 0.15); border-left: 5px solid hsl(140, 25%, 35%); .notice-title { color: hsl(140, 25%, 35%); } } } 如上文CSS代码可见，消息提醒框分为四个样式。分别是notice-warn、notice-info、notice-notice和notice-tip。使用代码与演示见下文。\nNotice Usage {{\u003c notice notice-warning \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 {{\u003c /notice \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 {{\u003c notice notice-info \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 {{\u003c /notice \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 {{\u003c notice notice-note \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 {{\u003c /notice \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 {{\u003c notice notice-tip \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 {{\u003c /notice \u003e}} 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。 Reference Documentation https://guanqr.com/tech/website/hugo-shortcodes-customization/ ",
   "wordCount" : "1027",
   "inLanguage": "en-us",
-  "image":"https://gfxkyz.github.io/posts/blog/eye-catching-notice-box/Eye-catching-Notice.png","datePublished": "2024-10-13T15:31:16+08:00",
+  "image":"https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/blog/eye-catching-notice-box/eye-catching-notice.png","datePublished": "2024-10-13T15:31:16+08:00",
   "dateModified": "2024-10-13T15:31:16+08:00",
   "author":[{
     "@type": "Person",
@@ -164,28 +164,23 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gfxkyz.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
-                <span>🔍 Search</span>
+                <a href="https://gfxkyz.github.io/search" title="Search (Alt &#43; /)" accesskey=/>
+                <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/" title="🏠 Home">
-                <span>🏠 Home</span>
+                <a href="https://gfxkyz.github.io/posts" title="Posts">
+                <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/posts" title="📚 Posts">
-                <span>📚 Posts</span>
+                <a href="https://gfxkyz.github.io/tags" title="Tags">
+                <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/tags" title="🧩 Tags">
-                <span>🧩 Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://gfxkyz.github.io/archives/" title="⏱️ Archives">
-                <span>⏱️ Archives</span>
+                <a href="https://gfxkyz.github.io/archives/" title="Archives">
+                <span>Archives</span>
                 </a>
             </li>
         </ul>
@@ -206,7 +201,7 @@ var _hmt = _hmt || [];
     </div>
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/blog/">🧱 Build Web Site</a></div>
+            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/blog/">Build Web Site Experience</a></div>
             <h1 class="post-title">
                 Hugo Eye-catching Notice Box
             </h1>

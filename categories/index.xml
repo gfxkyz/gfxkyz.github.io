@@ -6,13 +6,40 @@
     <description>Recent content in Categories on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Nov 2022 15:55:23 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Oct 2024 15:31:16 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>https://gfxkyz.github.io/categories/hugo/</link>
+      <pubDate>Sun, 13 Oct 2024 15:31:16 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://gfxkyz.github.io/categories/git/</link>
+      <pubDate>Fri, 05 May 2023 00:17:58 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Redis</title>
       <link>https://gfxkyz.github.io/categories/redis/</link>
       <pubDate>Wed, 30 Nov 2022 15:55:23 +0800</pubDate>
       
       <guid>https://gfxkyz.github.io/categories/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo Shortcodes</title>
+      <link>https://gfxkyz.github.io/categories/hugo-shortcodes/</link>
+      <pubDate>Thu, 05 May 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://gfxkyz.github.io/categories/hugo-shortcodes/</guid>
       <description></description>
     </item>
     

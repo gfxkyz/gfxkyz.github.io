@@ -50,12 +50,12 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="Hugo Theme PaperMod Add Hidden Article Function" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/" />
-<meta property="og:image" content="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/pah-cover.png" /><meta property="article:section" content="posts" />
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/blog/papermod-article-hidden/pah-cover.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-10-12T02:48:16+08:00" />
 <meta property="article:modified_time" content="2024-10-12T02:48:16+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://gfxkyz.github.io/posts/blog/papermod-article-hidden/pah-cover.png" />
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/blog/papermod-article-hidden/pah-cover.png" />
 <meta name="twitter:title" content="PaperMod Article Hidden"/>
 <meta name="twitter:description" content="Hugo Theme PaperMod Add Hidden Article Function"/>
 
@@ -69,14 +69,14 @@ var _hmt = _hmt || [];
         {
           "@type": "ListItem",
           "position":  1 ,
-          "name": "📚Posts",
+          "name": "Posts",
           "item": "https://gfxkyz.github.io/posts/"
         },
 
         {
           "@type": "ListItem",
           "position":  2 ,
-          "name": "🧱 Build Web Site",
+          "name": "Build Web Site Experience",
           "item": "https://gfxkyz.github.io/posts/blog/"
         }, 
     {
@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
   "articleBody": "1. Edit Article YAML Add hidden: true in the article yaml section\n--- title: \"Article Title\" date: lastmod: author: hidden: true --- 2. Hide Article IN Article List Page File Path : \\layouts_default\\list.html\nInsert {{ if not .Params.hidden }}{{- end }} to the specified position\n{{ if not .Params.hidden }} \u003carticle class=\"{{ $class }}\"\u003e \u003cdiv class=\"post-info\"\u003e \u003cheader class=\"entry-header\"\u003e \u003ch2\u003e {{- .Title }} {{- if .Draft }}\u003csup\u003e\u003cspan class=\"entry-isdraft\"\u003e\u0026nbsp;\u0026nbsp;[draft]\u003c/span\u003e\u003c/sup\u003e{{- end }} \u003c/h2\u003e \u003c/header\u003e {{- if (ne (.Param \"hideSummary\") true) }} \u003csection class=\"entry-content\"\u003e \u003cp\u003e {{- if .Description }} {{ .Description }} {{- end }} {{ if .Truncated }}...{{ end }} \u003c/p\u003e \u003c/section\u003e {{- end }} {{- if not (.Param \"hideMeta\") }} \u003cfooter class=\"entry-footer\"\u003e {{- partial \"post_meta.html\" . -}} \u003c/footer\u003e {{- end }} \u003c/div\u003e {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }} {{- partial \"cover.html\" (dict \"cxt\" . \"IsHome\" true \"isHidden\" $isHidden) }} \u003ca class=\"entry-link\" aria-label=\"post link to {{ .Title | plainify }}\" href=\"{{ .Permalink }}\"\u003e\u003c/a\u003e \u003c/article\u003e {{- end }} {{- end }} 3. Archives 3.1 Hidden In Archives File Path : \\layouts\\_default\\archives.html\n\u003cdiv class=\"archive-posts\"\u003e {{- range .Pages }} {{- if not .Params.hidden }} {{- if eq .Kind \"page\" }} \u003cdiv class=\"archive-entry\"\u003e \u003ch3 class=\"archive-entry-title\"\u003e {{- .Title | markdownify }} {{- if .Draft }}\u003csup\u003e\u003cspan class=\"entry-isdraft\"\u003e\u0026nbsp;\u0026nbsp;[draft]\u003c/span\u003e\u003c/sup\u003e{{- end }} \u003c/h3\u003e \u003cdiv class=\"archive-meta\"\u003e {{- partial \"post_meta.html\" . -}} \u003c/div\u003e \u003ca class=\"entry-link\" aria-label=\"post link to {{ .Title | plainify }}\" href=\"{{ .Permalink }}\"\u003e\u003c/a\u003e \u003c/div\u003e {{- end }} {{- end }} {{- end }} \u003c/div\u003e 3.2 Not Count Hidden Article Year Counts \u003ch2 class=\"archive-year-header\"\u003e {{- replace .Key \"0001\" \"\" }} \u003csup class=\"archive-count\"\u003e\u0026nbsp;\u0026nbsp; {{- $visibleCount := 0 -}} {{- range .Pages }} {{- if not .Params.hidden }} {{- $visibleCount = add $visibleCount 1 -}} {{- end }} {{- end -}} {{- $visibleCount }} \u003c/sup\u003e \u003c/h2\u003e Month Counts \u003ch3 class=\"archive-month-header\"\u003e {{- .Key }} \u003csup class=\"archive-count\"\u003e\u0026nbsp;\u0026nbsp; {{- $visibleCount := 0 -}} {{- range .Pages }} {{- if not .Params.hidden }} {{- $visibleCount = add $visibleCount 1 -}} {{- end }} {{- end -}} {{- $visibleCount }} \u003c/sup\u003e \u003c/h3\u003e ",
   "wordCount" : "418",
   "inLanguage": "en-us",
-  "image":"https://gfxkyz.github.io/posts/blog/papermod-article-hidden/pah-cover.png","datePublished": "2024-10-12T02:48:16+08:00",
+  "image":"https://cdn.jsdelivr.net/gh/gfxkyz/img@main/hugo/posts/blog/papermod-article-hidden/pah-cover.png","datePublished": "2024-10-12T02:48:16+08:00",
   "dateModified": "2024-10-12T02:48:16+08:00",
   "author":[{
     "@type": "Person",
@@ -164,28 +164,23 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gfxkyz.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
-                <span>🔍 Search</span>
+                <a href="https://gfxkyz.github.io/search" title="Search (Alt &#43; /)" accesskey=/>
+                <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/" title="🏠 Home">
-                <span>🏠 Home</span>
+                <a href="https://gfxkyz.github.io/posts" title="Posts">
+                <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/posts" title="📚 Posts">
-                <span>📚 Posts</span>
+                <a href="https://gfxkyz.github.io/tags" title="Tags">
+                <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://gfxkyz.github.io/tags" title="🧩 Tags">
-                <span>🧩 Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://gfxkyz.github.io/archives/" title="⏱️ Archives">
-                <span>⏱️ Archives</span>
+                <a href="https://gfxkyz.github.io/archives/" title="Archives">
+                <span>Archives</span>
                 </a>
             </li>
         </ul>
@@ -206,7 +201,7 @@ var _hmt = _hmt || [];
     </div>
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">📚Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/blog/">🧱 Build Web Site</a></div>
+            <div class="breadcrumbs"><a href="https://gfxkyz.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://gfxkyz.github.io/posts/blog/">Build Web Site Experience</a></div>
             <h1 class="post-title">
                 PaperMod Article Hidden
             </h1>

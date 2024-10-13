@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>🧱 Build Web Site on Home</title>
+    <title>Build Web Site Experience on Home</title>
     <link>https://gfxkyz.github.io/posts/blog/</link>
-    <description>Recent content in 🧱 Build Web Site on Home</description>
+    <description>Recent content in Build Web Site Experience on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Oct 2024 16:23:39 +0800</lastBuildDate><atom:link href="https://gfxkyz.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -57,55 +57,7 @@ Shortcodes 第一步在/layouts/shortcodes/目录下创建notice.html文件，�
       <pubDate>Sat, 12 Oct 2024 23:28:15 +0800</pubDate>
       
       <guid>https://gfxkyz.github.io/posts/blog/macos-install-hugo-env/</guid>
-      <description>&lt;div class=&#34;notice notice-tip&#34; &gt;&lt;span&gt;MacOS Version：Sequoia 15.0.1&lt;/span&gt;&lt;/div&gt;
-
-&lt;p&gt;最近计划将Hexo创建的博客迁移到Hugo上，跟着&lt;a href=&#34;https://space.bilibili.com/384068749&#34;&gt;CodeSheep&lt;/a&gt;大佬的视频进行Hugo的搭建。&lt;/p&gt;
-&lt;!DOCTYPE HTML&gt;
-&lt;html lang=&#34;en&#34;&gt;
-&lt;head&gt;
-    &lt;style type=&#34;text/css&#34;&gt;
-        .bilibili_shortcodes {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 66%;
-            margin: auto;
-            overflow: hidden;
-            text-align: center;
-             
-        }
-
-        .bilibili_shortcodes iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-        }
-    &lt;/style&gt;
-    &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class=&#34;bilibili_shortcodes&#34;&gt;
-    &lt;iframe
-            src=&#34;https://player.bilibili.com/player.html?bvid=BV1q4411i7gL&amp;page=1&amp;high_quality=1&amp;danmaku=0&amp;as_wide=0&#34;
-            scrolling=&#34;no&#34;
-            border=&#34;0&#34;
-            frameborder=&#34;no&#34;
-            framespacing=&#34;0&#34;
-            allowfullscreen=&#34;true&#34;
-    &gt;
-    &lt;/iframe&gt;
-    
-    
-    
-
-    
-
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;p&gt;因为如上视频发布于2019-05-10 18:00:38，系统环境发生了一些变化，在安装过程中遇到一些问题，下面是安装过程中有帮助的一些博客文章。（&lt;font color=&#34;gray&#34;&gt;具体问题忘记记录了，只是将文章收藏了。☺️&lt;/font&gt;）&lt;/p&gt;</description>
+      <description>MacOS Version：Sequoia 15.0.1</description>
     </item>
     
     <item>
